@@ -6,8 +6,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/ypx-website/', // Giuhub repo 名稱
   plugins: [vue(), vueDevTools(), tailwindcss()],
   resolve: {
     alias: {

@@ -7,7 +7,7 @@ const isHome = computed(() => route.path === '/')
 
 const bannerStyle = computed(() => ({
     // backgroundImage: `url('https://fakeimg.pl/1920x1080')`,
-    backgroundImage: "url('/media/世界地圖.png')",
+    backgroundImage: "url('src/assets/media/世界地圖.png')",
     backgroundPosition: '35% 50%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -29,7 +29,7 @@ function onImageLoad(event: Event) {
 
 <template>
     <div id="banner" :style="bannerStyle" class="relative flex flex-col justify-center items-center select-none">
-        <img :class="isPortrait ? 'w-[50%]' : 'h-[80%]'" src="/media/藏頭詩.png" alt="" @load="onImageLoad"
+        <img :class="isPortrait ? 'w-[50%]' : 'h-[80%]'" src="@/assets/media/藏頭詩.png" alt="" @load="onImageLoad"
             draggable="false" />
         <a v-if="isHome" href="#info"
             class="scroll-hint absolute bottom-[20px] left-[50%] translate-x-[-50%] flex select-none">

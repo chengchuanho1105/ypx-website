@@ -1,7 +1,9 @@
 import { CompanyProfile } from '@/config/companyProfile'
 import type { Component } from 'vue'
+import { defineAsyncComponent } from 'vue'
 
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
+const DefaultLayout = defineAsyncComponent(() => import('@/layouts/DefaultLayout.vue'))
+
 import HomeView from '../views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ProductView from '@/views/ProductView.vue'

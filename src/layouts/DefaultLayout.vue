@@ -28,9 +28,11 @@ useHead({
         { property: 'og:locale', content: DefaultSEO.og.locale },
 
         // Google
+        /*
         { itemprop: 'name', content: DefaultSEO.og.title },
         { itemprop: 'description', content: DefaultSEO.og.description },
         { itemprop: 'image', content: DefaultSEO.og.image },
+         */
 
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: DefaultSEO.og.title },
