@@ -82,9 +82,10 @@ const contentCardData = ref([
 
 <template>
 
-  <section id="founderIntro" class="my-10">
+  <!-- Section: 創辦人介紹 (Founder Introduction) -->
+  <section id="founderIntro" class="my-15">
 
-    <SectionTitle mainTitle="創辦人介紹" />
+    <SectionTitle mainTitle="創辦人介紹" sub-title="不只創業，更創下了傳統豆皮的新高度" />
 
     <ContentCard title="源品香創辦人陳先生"
       content="36歲創業，帶著對台灣傳統豆皮工藝的熱愛與堅持，投入豆製品產業數十載。<br>他深信，唯有遵循古法手工製作，嚴選台灣在地非基因改造大豆，才能煉出真正香醇、令人安心的豆皮。<br>以職人精神，親力親為每一個製作環節，將對土地的情感，融入每一張豆皮之中。"
@@ -92,9 +93,10 @@ const contentCardData = ref([
 
   </section>
 
-  <section id="history" class="ny-10">
+  <!-- Section: 歷史大事記 (Milestones) -->
+  <section id="milestones" class="ny-10">
 
-    <SectionTitle mainTitle="歷史沿革" />
+    <SectionTitle mainTitle="歷史大事記" sub-title="回顧源品香一路走來的點滴與故事" />
 
     <div class="bg-white dark:bg-indigo-950 rounded-xl shadow-lg p-6 transition-colors duration-300">
 
@@ -109,22 +111,24 @@ const contentCardData = ref([
 
   </section>
 
-  <section id="persistence" class="my-10">
+  <!-- Section: 製作堅持 (Craftsmanship Values) -->
+  <section id="craftsmanshipValues" class="my-15">
 
-    <SectionTitle mainTitle="製作堅持" />
+    <SectionTitle mainTitle="職人堅持" sub-title="以時間淬鍊風味，用手工傳遞真誠" />
     <ImgCardGrid :items="contentCardData" />
 
   </section>
 
-  <section class="my-10">
-    <SectionTitle mainTitle="社會責任" />
+  <!-- Section: 社會責任 (Social Responsibility) -->
+  <section id="socialResponsibility" class="my-15">
+    <SectionTitle mainTitle="社會責任" sub-title="支持台灣農業、在地耕耘、回饋社會" />
 
-    <div class="grid md:grid-cols-3 gap-6 mt-6 text-gray-800">
+    <div class="grid lg:grid-cols-3 gap-5 text-gray-800">
       <!-- 在地農業 -->
       <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
         <i class="bi bi-flower3 text-green-600 text-4xl mb-4"></i>
         <h3 class="font-bold text-lg mb-2">來自土地，回饋土地</h3>
-        <p>支持台灣在地農業，採用本土黃豆，與土地共生共榮。</p>
+        <p>支持台灣在地農業，採用<span class="text-green-600 font-bold">100%</span>本土黃豆，與土地共生共榮。</p>
       </div>
 
       <!-- 環保理念 -->
@@ -141,73 +145,21 @@ const contentCardData = ref([
         <p>致力於公益與在地社區合作，共創美好未來。</p>
       </div>
     </div>
-
-    <div class="grid md:grid-cols-3 gap-6 mt-8 text-center">
-      <div>
-        <h2 class="text-4xl font-bold text-green-600">100%</h2>
-        <p class="text-sm">使用台灣在地黃豆</p>
-      </div>
-      <div>
-        <h2 class="text-4xl font-bold text-blue-600">-30%</h2>
-        <p class="text-sm">生產能耗減量</p>
-      </div>
-      <div>
-        <h2 class="text-4xl font-bold text-yellow-600">15+</h2>
-        <p class="text-sm">場次社區活動參與</p>
-      </div>
-    </div>
-
   </section>
 
-  <srcsection id="" class="my-10">
+  <!-- Section: 加入我們 (Join Our Team) -->
+  <srcsection id="joinOurTeam" class="my-15">
     <SectionTitle mainTitle="加入源品香" subTitle="成為傳承美味與信念的一份子" />
-
-    <div class="grid md:grid-cols-2 gap-6 mt-6">
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-gray-800 mb-1">生產技術員</h3>
-        <p class="text-gray-600 text-sm mb-2">工作地點：彰化縣田中鎮｜全職</p>
-        <p class="text-gray-700">學習傳統豆皮製程，操作機台與品管檢測。</p>
-        <button class="mt-4 text-indigo-600 font-semibold hover:underline">查看詳情</button>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-gray-800 mb-1">包裝作業員</h3>
-        <p class="text-gray-600 text-sm mb-2">工作地點：彰化縣田中鎮｜兼職可</p>
-        <p class="text-gray-700">協助產品包裝與出貨流程，簡單易學，歡迎二度就業。</p>
-        <button class="mt-4 text-indigo-600 font-semibold hover:underline">查看詳情</button>
+    <div class="bg-indigo-50 py-10 rounded-xl shadow">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">加入源品香，一起傳承美味與信念</h2>
+        <p class="text-gray-700 text-lg">
+          我們相信，用心製作每一片豆皮，也是在成就每一份生活。<br>
+          若你熱愛傳統、願意學習、渴望穩定與成長，我們誠摯歡迎你加入。
+        </p>
       </div>
     </div>
-
   </srcsection>
-
-  <section class="bg-indigo-50 py-10 rounded-xl shadow mt-10">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">加入源品香，一起傳承美味與信念</h2>
-      <p class="text-gray-700 text-lg mb-6">
-        我們相信，用心製作每一片豆皮，也是在成就每一份生活。<br>
-        若你熱愛傳統、願意學習、渴望穩定與成長，我們誠摯歡迎你加入。
-      </p>
-      <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700">
-        查看目前職缺
-      </button>
-    </div>
-  </section>
-
-  <!-- 可放在下方 -->
-  <div class="mt-10 bg-white p-6 rounded-xl shadow">
-    <h3 class="text-xl font-bold mb-4">想加入我們？留下聯絡方式！</h3>
-    <form class="grid gap-4 md:grid-cols-2">
-      <input type="text" placeholder="姓名" class="p-3 border rounded" />
-      <input type="tel" placeholder="聯絡電話" class="p-3 border rounded" />
-      <input type="email" placeholder="Email（可選）" class="p-3 border rounded md:col-span-2" />
-      <textarea placeholder="簡述您想應徵的工作內容或經驗" class="p-3 border rounded md:col-span-2"></textarea>
-      <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 md:col-span-2">
-        提交資料
-      </button>
-    </form>
-  </div>
-
-
 
 </template>
 

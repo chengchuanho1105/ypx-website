@@ -6,7 +6,7 @@ import SectionTitle from '@/components/SectionTitle.vue';
 
 <template>
 
-  <section class="my-10">
+  <section class="my-15">
     <SectionTitle mainTitle="公司資訊" />
 
     <div class="text-gray-600 body-font relative">

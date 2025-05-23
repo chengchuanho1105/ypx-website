@@ -4,7 +4,7 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
 </script>
 
 <template>
-    <footer class="bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-50 pt-12 pb-5">
+    <footer class="bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-50 mt-10 pt-12 pb-5">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
 
             <!-- 公司資訊 -->

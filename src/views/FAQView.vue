@@ -17,7 +17,7 @@ const faqs = [
 </script>
 
 <template>
-  <section class="my-10">
+  <section class="my-15">
     <SectionTitle main-title="常見問題" sub-title="FAQ" />
     <FaqItem v-for="(faq, index) in faqs" :key="index" :question="faq.question" :answer="faq.answer" />
   </section>
