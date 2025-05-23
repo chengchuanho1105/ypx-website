@@ -46,7 +46,7 @@ useHead({
     <div id="defaultLayoutView" class="bg-gray-100 dark:bg-gray-900">
         <header>
             <Navbar />
-            <!--<UpdatingAlert />-->
+            <UpdatingAlert />
             <Banner />
             <Breadcrumb />
         </header>
