@@ -28,7 +28,7 @@ const newsList = ref([
   },
 ]);
 
-function goToDetail(id) {
+function goToDetail(id: number): void {
   // 這邊可以用 router push 或 window.open 等方式導向文章詳細頁
   alert(`前往文章詳細頁：${id}`);
 }
