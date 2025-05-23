@@ -4,7 +4,7 @@ import ProductCarousel from '@/components/ProductCarousel.vue'
 </script>
 
 <template>
-  <section class="my-10 select-none">
+  <section class="my-10">
     <SectionTitle main-title="熱銷產品" />
     <ProductCarousel />
   </section>

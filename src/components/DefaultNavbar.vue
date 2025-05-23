@@ -40,7 +40,7 @@ onUnmounted(() => {
 
 <template>
     <div id="defaultNavbar" :class="{
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300 select-none': true,
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300': true,
         'bg-indigo-200/70 dark:bg-indigo-800/70 shadow backdrop-blur': isScrolled,
         'bg-indigo-200/30 dark:bg-indigo-800/30': !isScrolled,
         '-translate-y-full': !isNavbarVisible, // Hide the navbar
@@ -113,7 +113,7 @@ onUnmounted(() => {
 
     </div>
 
-    <div class="fixed bottom-5 right-3 z-50 select-none">
+    <div class="fixed bottom-5 right-3 z-50">
         <a v-show="isScrolled" href="#banner"
             class="bg-indigo-500 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700">
             <span class="text-lg font-bold text-white">Top</span>

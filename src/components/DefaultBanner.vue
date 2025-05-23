@@ -29,11 +29,10 @@ function onImageLoad(event: Event) {
 </script>
 
 <template>
-    <div id="banner" :style="bannerStyle" class="relative flex flex-col justify-center items-center select-none">
+    <div id="banner" :style="bannerStyle" class="relative flex flex-col justify-center items-center">
         <img :class="isPortrait ? 'w-[50%]' : 'h-[80%]'" src="@/assets/media/藏頭詩.png" alt="" @load="onImageLoad"
             draggable="false" />
-        <a v-if="isHome" href="#info"
-            class="scroll-hint absolute bottom-[20px] left-[50%] translate-x-[-50%] flex select-none">
+        <a v-if="isHome" href="#info" class="scroll-hint absolute bottom-[20px] left-[50%] translate-x-[-50%] flex">
             <span class="text-lg text-white text-center text-shadow-[2px_2px_2px_rgba(0,0,0,0.5)]">
                 向下瀏覽<br />Ｖ
             </span>

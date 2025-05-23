@@ -57,7 +57,7 @@ const imgCardGridData = ref([
       imageWidthProp="60%" imagePosition="right" />
   </section>
 
-  <section class="my-5 select-none">
+  <section class="my-5">
     <div class="flex lg:flex-row flex-col w-full bg-white dark:bg-indigo-950 rounded-xl shadow-xl">
       <div class="lg:w-[60%] w-full h-[40svh] overflow-hidden shrink-0">
         <img class="w-full h-full object-cover lg:rounded-l-xl lg:rounded-tr-none rounded-t-xl"
@@ -93,7 +93,7 @@ const imgCardGridData = ref([
     </div>
   </section>
 
-  <section class="my-5 select-none">
+  <section class="my-5">
     <div class="relative h-[40svh] shadow-xl rounded-xl">
       <img class="w-full h-full object-cover rounded-xl" src="https://fakeimg.pl/1920x1080" alt="" draggable="false">
       <div class="absolute top-0 start-0 end-0">

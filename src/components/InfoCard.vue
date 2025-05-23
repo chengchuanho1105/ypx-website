@@ -37,7 +37,7 @@ const imageWidth = computed(() => props.imageWidthProp);
 </script>
 
 <template>
-    <div class="flex bg-white p-3 rounded-xl shadow-xl h-[40svh] select-none">
+    <div class="flex bg-white p-3 rounded-xl shadow-xl h-[40svh]">
         <div v-if="imagePosition === 'left'" :style="{ width: imageWidth }" class="overflow-hidden">
             <img :src="img"
                 class="object-cover h-full w-full transform origin-center transition-transform duration-300 hover:scale-105 rounded-lg"

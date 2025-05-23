@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="fixed bottom-[80px] left-[50%] translate-x-[-50%] z-50 select-none">
+    <div class="fixed bottom-[80px] left-[50%] translate-x-[-50%] z-50">
         <div
             class="flex items-center p-3 text-indigo-800 rounded-lg bg-indigo-200 dark:bg-indigo-900 dark:text-indigo-100">
             <i class="bi bi-exclamation-triangle-fill"></i>
