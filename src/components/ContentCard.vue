@@ -55,7 +55,7 @@ defineProps({
                     </p>
                 </div>
             </div>
-            <div class="lg:w-[30%] w-full h-[40svh] overflow-hidden shrink-0">
+            <div class="lg:w-[30%] w-full lg:h-[40svh] h-full overflow-hidden shrink-0">
                 <img class="w-full h-full object-cover lg:rounded-r-xl lg:rounded-l-none rounded-b-xl" :src="imageUrl"
                     :alt="imageAlt">
             </div>

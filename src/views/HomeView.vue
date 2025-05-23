@@ -4,30 +4,34 @@ import { ref } from 'vue';
 import ImgCardGrid from '@/components/ImgCardGrid.vue';
 
 // ImgCardGrid Data
+import imgCardGridImg1 from '@/assets/media/關於我們.png'
+import imgCardGridImg2 from '@/assets/media/精選產品.png'
+import imgCardGridImg3 from '@/assets/media/媒體介紹.png'
+import imgCardGridImg4 from '@/assets/media/客戶見證.png'
 const imgCardGridData = ref([
   {
-    imageUrl: 'src/assets/media/關於我們.png',
+    imageUrl: imgCardGridImg1,
     imageAlt: '關於我們',
     iconClass: 'bi bi-award-fill',
     title: '關於我們',
     content: '源品香由一群熱愛土地與豆製品的職人組成。 並秉持「傳承、專業、誠信」，淬鍊出豆香的純粹與真誠，讓健康的飲食悄然在每一張豆皮中發芽。',
   },
   {
-    imageUrl: 'src/assets/media/精選產品.png',
+    imageUrl: imgCardGridImg2,
     imageAlt: '精選產品',
     iconClass: 'bi bi-droplet-half',
     title: '精選產品',
     content: '產品皆由天然食材製成，無無外添加任何化學成分。讓您在享受美味的同時，也能感受健康生活的美好。',
   },
   {
-    imageUrl: 'src/assets/media/媒體介紹.png',
+    imageUrl: imgCardGridImg3,
     imageAlt: '媒體介紹',
     iconClass: 'bi bi-hand-index-thumb',
     title: '媒體介紹',
     content: '媒體報導不只是產品的介紹，更是我們對品質與服務的承諾。 源品香相信能讓每一位顧客感受到我們的用心與專業。',
   },
   {
-    imageUrl: 'src/assets/media/客戶見證.png',
+    imageUrl: imgCardGridImg4,
     imageAlt: '客戶見證',
     iconClass: 'bi bi-heart-fill',
     title: '客戶見證',

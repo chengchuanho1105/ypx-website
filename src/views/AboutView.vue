@@ -42,35 +42,35 @@ const timelineData = [
 ];
 
 // ImgCardGrid Data
-import imgCardGridImg1 from '@/assets/media/嚴選黃豆.png'
-import imgCardGridImg2 from '@/assets/media/傳統工法.png'
-import imgCardGridImg3 from '@/assets/media/手工製作.png'
-import imgCardGridImg4 from '@/assets/media/匠心堅持.png'
+import contentCardImg1 from '@/assets/media/嚴選黃豆.png'
+import contentCardImg2 from '@/assets/media/傳統工法.png'
+import contentCardImg3 from '@/assets/media/手工製作.png'
+import contentCardImg4 from '@/assets/media/匠心堅持.png'
 
-const imgCardGridData = ref([
+const contentCardData = ref([
   {
-    imageUrl: imgCardGridImg1,
+    imageUrl: contentCardImg1,
     imageAlt: '嚴選黃豆圖片',
     iconClass: 'bi bi-award-fill',
     title: '嚴選黃豆',
     content: '使用單一品種非基因改造黃豆，味道更純正，成本也比混合豆高出5～6%。',
   },
   {
-    imageUrl: imgCardGridImg2,
+    imageUrl: contentCardImg2,
     imageAlt: '傳統工法圖片',
     iconClass: 'bi bi-droplet-half',
     title: '傳統三溫暖工法',
     content: '全程遵循「浸泡 → 煮滾 → 過濾」的黃豆三溫暖製程。',
   },
   {
-    imageUrl: imgCardGridImg3,
+    imageUrl: contentCardImg3,
     imageAlt: '手工製作圖片',
     iconClass: 'bi bi-hand-index-thumb',
     title: '手工製作',
     content: '每張豆皮皆由人工細心撈取，無任何化學添加。',
   },
   {
-    imageUrl: imgCardGridImg4,
+    imageUrl: contentCardImg4,
     imageAlt: '匠心堅持圖片',
     iconClass: 'bi bi-heart-fill',
     title: '匠心堅持',
@@ -112,7 +112,7 @@ const imgCardGridData = ref([
   <section id="persistence" class="my-10">
 
     <SectionTitle mainTitle="製作堅持" />
-    <ImgCardGrid :items="imgCardGridData" />
+    <ImgCardGrid :items="contentCardData" />
 
   </section>
 

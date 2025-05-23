@@ -5,7 +5,7 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
 
 <template>
     <footer class="bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-50 pt-12 pb-5">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
 
             <!-- 公司資訊 -->
             <div>
@@ -15,7 +15,7 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
                         {{ CompanyProfile.enName }}
                     </small>
                 </h3>
-                <div class="h-1 bg-gray-200 rounded overflow-hidden mt-1 mb-5">
+                <div class="h-1 bg-gray-100 rounded overflow-hidden mt-1 mb-5">
                     <div class="w-35 h-full bg-indigo-500 dark:bg-indigo-600"></div>
                 </div>
                 <p class="mt-4 text-sm px-5">
@@ -29,7 +29,7 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
             <!-- 社群平台 -->
             <div class="">
                 <h4 class="text-lg font-bold text-indigo-700 dark:text-indigo-300 mb-1">追蹤我們</h4>
-                <div class="h-1 bg-gray-200 rounded overflow-hidden mt-1 mb-5">
+                <div class="h-1 bg-gray-100 rounded overflow-hidden mt-1 mb-5">
                     <div class="w-35 h-full bg-indigo-500 dark:bg-indigo-600"></div>
                 </div>
                 <div class="flex gap-5 px-5">
@@ -55,7 +55,7 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
             <!-- 網站地圖 -->
             <div>
                 <h4 class="text-lg font-bold text-indigo-700 dark:text-indigo-300 mr-10 mb-1">網站地圖</h4>
-                <div class="h-1 bg-gray-200 rounded overflow-hidden mt-1 mb-5">
+                <div class="h-1 bg-gray-100 rounded overflow-hidden mt-1 mb-5">
                     <div class="w-35 h-full bg-indigo-500 dark:bg-indigo-600"></div>
                 </div>
                 <div class="grid grid-cols-3 px-5">

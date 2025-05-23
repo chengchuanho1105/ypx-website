@@ -24,7 +24,7 @@ const props = defineProps({
                 </small>
             </h1>
         </div>
-        <div class="h-1 bg-gray-200 rounded overflow-hidden mt-1 mb-5">
+        <div class="h-1 bg-gray-300 rounded overflow-hidden mt-1 mb-5">
             <div class="w-50 h-full bg-indigo-500 dark:bg-indigo-600"></div>
         </div>
     </div>
