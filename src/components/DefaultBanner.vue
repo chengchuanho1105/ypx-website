@@ -5,9 +5,10 @@ import { computed, ref } from 'vue'
 const route = useRoute()
 const isHome = computed(() => route.path === '/')
 
+import bannerBgImg from '@/assets/media/世界地圖.png'
+
 const bannerStyle = computed(() => ({
-    // backgroundImage: `url('https://fakeimg.pl/1920x1080')`,
-    backgroundImage: "url('src/assets/media/世界地圖.png')",
+    backgroundImage: `url('${bannerBgImg}')`,
     backgroundPosition: '35% 50%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',

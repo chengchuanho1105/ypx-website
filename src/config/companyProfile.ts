@@ -22,6 +22,9 @@ export const CompanyProfile = {
   logo: '/assets/logo.png',
   favicon: 'public/favicon.ico',
 
+  // 網站資料
+  githubRepo: 'ypx-website',
+
   // 網頁設計 SEO
   themeColor: '#4f46e5',
   websiteTitleSlogan: '職人精神打造，道地且香氣四溢',

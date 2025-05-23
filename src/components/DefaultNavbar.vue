@@ -49,7 +49,7 @@ onUnmounted(() => {
         <nav class="flex items-center mx-auto justify-between py-2 px-5">
             <div class="flex items-center space-x-2">
                 <img :src="CompanyProfile.favicon" alt="" class="h-[40px] w-[40px]" />
-                <a href="/">
+                <a :href="'/' + CompanyProfile.githubRepo">
                     <span class="text-lg font-bold text-indigo-950 dark:text-indigo-50">
                         {{ CompanyProfile.shortName }}
                     </span>

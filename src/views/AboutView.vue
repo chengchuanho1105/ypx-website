@@ -6,6 +6,9 @@ import ContentCard from '@/components/ContentCard.vue';
 import TimrLine from '@/components/TimrLine.vue';
 import ImgCardGrid from '@/components/ImgCardGrid.vue';
 
+// 創辦人頭像
+import founderImg from '@/assets/media/創辦人頭像_1920x1080.jpg'
+
 // timeline Data
 const timelineData = [
   {
@@ -39,30 +42,35 @@ const timelineData = [
 ];
 
 // ImgCardGrid Data
+import imgCardGridImg1 from '@/assets/media/嚴選黃豆.png'
+import imgCardGridImg2 from '@/assets/media/傳統工法.png'
+import imgCardGridImg3 from '@/assets/media/手工製作.png'
+import imgCardGridImg4 from '@/assets/media/匠心堅持.png'
+
 const imgCardGridData = ref([
   {
-    imageUrl: 'src/assets/media/嚴選黃豆.png',
+    imageUrl: imgCardGridImg1,
     imageAlt: '嚴選黃豆圖片',
     iconClass: 'bi bi-award-fill',
     title: '嚴選黃豆',
     content: '使用單一品種非基因改造黃豆，味道更純正，成本也比混合豆高出5～6%。',
   },
   {
-    imageUrl: 'src/assets/media/傳統工法.png',
+    imageUrl: imgCardGridImg2,
     imageAlt: '傳統工法圖片',
     iconClass: 'bi bi-droplet-half',
     title: '傳統三溫暖工法',
     content: '全程遵循「浸泡 → 煮滾 → 過濾」的黃豆三溫暖製程。',
   },
   {
-    imageUrl: 'src/assets/media/手工製作.png',
+    imageUrl: imgCardGridImg3,
     imageAlt: '手工製作圖片',
     iconClass: 'bi bi-hand-index-thumb',
     title: '手工製作',
     content: '每張豆皮皆由人工細心撈取，無任何化學添加。',
   },
   {
-    imageUrl: 'src/assets/media/匠心堅持.png',
+    imageUrl: imgCardGridImg4,
     imageAlt: '匠心堅持圖片',
     iconClass: 'bi bi-heart-fill',
     title: '匠心堅持',
@@ -80,7 +88,7 @@ const imgCardGridData = ref([
 
     <ContentCard title="源品香創辦人陳先生"
       content="36歲創業，帶著對台灣傳統豆皮工藝的熱愛與堅持，投入豆製品產業數十載。<br>他深信，唯有遵循古法手工製作，嚴選台灣在地非基因改造大豆，才能煉出真正香醇、令人安心的豆皮。<br>以職人精神，親力親為每一個製作環節，將對土地的情感，融入每一張豆皮之中。"
-      imageUrl="src/assets/media/創辦人頭像_1920x1080.jpg" />
+      :imageUrl=founderImg />
 
   </section>
 
