@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://chuan.life/index.html</loc>
+  </url>
+  <url>
+    <loc>https://chuan.life/example.html</loc>
+  </url>
+  <url>
+    <loc>https://chuan.life/about.html</loc>
+  </url>
+  <url>
+    <loc>https://chuan.life/product.html</loc>
+  </url>
+  <url>
+    <loc>https://chuan.life/media.html</loc>
+  </url>
+  <url>
+    <loc>https://chuan.life/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://chuan.life/contact.html</loc>
+  </url>
+</urlset>
+
+
+<!--
+首頁(index.html)：最新消息、品牌亮點、精選產品、媒體報導、客戶見證
+　├─公司介紹(about.html)：
+　│　├─創辦人介紹(founder.html)：創辦人介紹、經營理念
+　│　└─工廠介紹(factory.html)：歷史沿革、製作堅持、企業文化與社會責任(例：與農會合作、永續經營)
+　├─產品介紹(products.html)：
+　│　└─商品分類頁(productList.html)
+　│　 　└─每個產品頁：圖片(可多角度)、產品介紹、成分 / 產地 /
+保存方式、
+　├─媒體專區(media.html)：電視/網路新聞連結（例如民視報導）、雜誌或網路文章、品牌/地方合作案例、最近活動花絮、各級學校參訪
+　├─常見問題(faq.html)：
+　└─聯絡我們/購買(contact.html)：營業時間、客服專線(電話/LINE)、工廠位置、社交平台(FB、IG)、留言表單、招商合作
+-->
