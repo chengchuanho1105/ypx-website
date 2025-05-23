@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { writeFileSync } from 'fs'
+import { writeFileSync, copyFileSync } from 'fs'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -19,6 +19,12 @@ export default defineConfig({
       name: 'vite:cname',
       closeBundle() {
         writeFileSync('./dist/CNAME', 'chuan.life')
+      },
+    },
+    {
+      name: 'vite:404-spa-fallback',
+      closeBundle() {
+        copyFileSync('./dist/index.html', './dist/404.html')
       },
     },
   ],
