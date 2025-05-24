@@ -52,9 +52,9 @@ export const routeMetaList: Array<{
   {
     path: '/product',
     name: 'product',
-    title: '產品',
+    title: '產品資訊',
     component: ProductView, // 重新指定 ProductView 為父路由的組件
-    meta: { layout: DefaultLayout, pageTitle: `產品｜${CompanyProfile.shortName}` },
+    meta: { layout: DefaultLayout, pageTitle: `產品資訊｜${CompanyProfile.shortName}` },
     children: [
       {
         path: '', // 將 ProductView 設為 /product 的預設子路由
@@ -128,8 +128,9 @@ export const pathToTitleMap = Object.fromEntries(
           .filter((child) => !child.meta.hideFromNav) // 過濾掉隱藏的子路由
           .map((child) => {
             const childPath = child.path.startsWith('/') ? child.path.slice(1) : child.path
-            return [`${parentPath}/${childPath}`, child.title]
-          }),
+            return [[`${parentPath}/${childPath}`, child.title]] as [string, string][]
+          })
+          .flat(),
       )
     }
     return entries

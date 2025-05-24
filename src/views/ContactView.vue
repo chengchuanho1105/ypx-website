@@ -1,47 +1,179 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 
-import SectionTitle from '@/components/SectionTitle.vue';
+import SectionTitle from '@/components/SectionTitle.vue'
+import { CompanyProfile } from '@/config/companyProfile.ts'
 
+const form = ref({
+  name: '',
+  email: '',
+  phone: '',
+  message: '',
+})
+
+const errors = ref({
+  name: '',
+  email: '',
+  message: '',
+})
+
+const validateEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
+const submitForm = () => {
+  // 重置錯誤訊息
+  errors.value = { name: '', email: '', message: '' }
+
+  let valid = true
+  if (!form.value.name.trim()) {
+    errors.value.name = '請輸入姓名'
+    valid = false
+  }
+  if (!validateEmail(form.value.email)) {
+    errors.value.email = '請輸入有效的 Email'
+    valid = false
+  }
+  if (!form.value.message.trim()) {
+    errors.value.message = '請輸入留言內容'
+    valid = false
+  }
+
+  if (!valid) return
+
+  // 送出表單的邏輯 (例如發 API)
+  alert(`感謝您的留言，${form.value.name}！我們會盡快回覆您。`)
+
+  // 清空表單
+  form.value = { name: '', email: '', phone: '', message: '' }
+}
 </script>
 
 <template>
+  <div class="max-w-5xl mx-auto p-6 space-y-12">
 
-  <section class="my-15">
-    <SectionTitle mainTitle="公司資訊" />
+    <!-- 頁面標題 -->
+    <h1 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 text-center">
+      聯絡我們
+    </h1>
 
-    <div class="text-gray-600 body-font relative">
-      <div class="absolute inset-0 bg-gray-300">
-        <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no"
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1517.6909685911153!2d120.49958292857745!3d23.782466225882334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDQ2JzU2LjkiTiAxMjDCsDMwJzAwLjgiRQ!5e1!3m2!1szh-TW!2stw!4v1747833670212!5m2!1szh-TW!2stw"
-          style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
-      </div>
-      <div class="container px-5 py-24 mx-auto flex">
-        <div
-          class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
-          <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
-          <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe
-          </p>
-          <div class="relative mb-4">
-            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-            <input type="email" id="email" name="email"
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-          </div>
-          <div class="relative mb-4">
-            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-            <textarea id="message" name="message"
-              class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-          </div>
-          <button
-            class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-          <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral
-            artisan.
-          </p>
+    <!-- 留言表單 -->
+    <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow space-y-6">
+      <h2 class="text-xl font-semibold text-indigo-600">留言表單</h2>
+      <form @submit.prevent="submitForm" class="space-y-4 max-w-xl">
+        <div>
+          <label for="name" class="block font-medium mb-1">姓名 *</label>
+          <input id="name" v-model="form.name" type="text"
+            class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="您的姓名" />
+          <p v-if="errors.name" class="text-sm text-red-500 mt-1">{{ errors.name }}</p>
         </div>
-      </div>
-    </div>
+        <div>
+          <label for="email" class="block font-medium mb-1">電子郵件 *</label>
+          <input id="email" v-model="form.email" type="email"
+            class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="example@mail.com" />
+          <p v-if="errors.email" class="text-sm text-red-500 mt-1">{{ errors.email }}</p>
+        </div>
+        <div>
+          <label for="phone" class="block font-medium mb-1">電話</label>
+          <input id="phone" v-model="form.phone" type="tel"
+            class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="可填手機或市話" />
+        </div>
+        <div>
+          <label for="message" class="block font-medium mb-1">留言內容 *</label>
+          <textarea id="message" v-model="form.message" rows="5"
+            class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="請輸入您的問題或建議"></textarea>
+          <p v-if="errors.message" class="text-sm text-red-500 mt-1">{{ errors.message }}</p>
+        </div>
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700 transition">
+          送出留言
+        </button>
+      </form>
+    </section>
+  </div>
 
+  <section id="" class="my-10">
+    <SectionTitle main-title="留言表單" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+
+    </div>
   </section>
 
+  <section id="" class="my-10">
+    <SectionTitle main-title="購買方式" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+      1. 現場購買<br>
+      2. 留言訂購<br>
+      3. LINE訂購<br>
+      4. 電話訂購
+    </div>
+  </section>
+
+  <section id="" class="my-10">
+    <SectionTitle main-title="營業時間" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+      <ul class="list-disc list-inside">
+        <li>週一至週五：09:00 - 18:00</li>
+        <li>週六：10:00 - 14:00</li>
+        <li>週日及國定假日休息</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="" class="my-10">
+    <SectionTitle main-title="客服專線" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+      <p>服務時間：週一至週五 09:00 - 18:00</p>
+      <p>電話：<a href="tel:0800123456" class="text-indigo-600 hover:underline">0800-123-456</a></p>
+      <p>Email：<a href="mailto:ypx@gmail.com" class="text-indigo-600 hover:underline">ypx@gmail.com</a></p>
+    </div>
+  </section>
+
+  <section id="" class="my-10">
+    <SectionTitle main-title="社交平台" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+      <div class="flex gap-5 px-5">
+        <a :href="CompanyProfile.lineOfficialAccount" target="_blank"
+          class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
+          <i class="bi bi-line text-3xl"></i>
+        </a>
+        <a :href="CompanyProfile.youtubeChannel" target="_blank"
+          class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
+          <i class="bi bi-youtube text-3xl"></i>
+        </a>
+        <a :href="CompanyProfile.instagramPage" target="_blank"
+          class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
+          <i class="bi bi-instagram text-3xl"></i>
+        </a>
+        <a :href="CompanyProfile.facebookFanspage" target="_blank"
+          class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
+          <i class="bi bi-facebook text-3xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="" class="my-10">
+    <SectionTitle main-title="工廠位置" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+
+    </div>
+  </section>
+
+  <section id="" class="my-10">
+    <SectionTitle main-title="招商合作" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
+      <p>我們歡迎有意願的合作夥伴洽談合作機會，請透過上述留言表單或客服專線與我們聯繫。</p>
+    </div>
+  </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* 如果你想用 fontawesome 的圖示，要先安裝並引入 fontawesome */
+/* 以下是範例，若沒有使用 fontawesome 可改成 svg 或純文字 */
+.fab {
+  margin-right: 0.5rem;
+}
+</style>

@@ -37,7 +37,7 @@ function goToDetail(id: number): void {
 <template>
   <section class="my-15">
     <SectionTitle main-title="最新消息" sub-title="News" />
-    <ul class="space-y-8 bg-wihte dark:bg-indigo-900 p-5 rounded-xl shadow">
+    <ul class="space-y-8 bg-white dark:bg-indigo-900 p-5 rounded-xl shadow">
       <li v-for="news in newsList" :key="news.id" class="pb-5 border-b border-indigo-300 dark:border-indigo-700">
         <div class="flex justify-between items-center mb-3">
           <time class="text-sm text-indigo-500 dark:text-indigo-300 font-mono tracking-wide">{{ news.date }}</time>
