@@ -49,16 +49,9 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div class="max-w-5xl mx-auto p-6 space-y-12">
-
-    <!-- 頁面標題 -->
-    <h1 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300 text-center">
-      聯絡我們
-    </h1>
-
-    <!-- 留言表單 -->
-    <section class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow space-y-6">
-      <h2 class="text-xl font-semibold text-indigo-600">留言表單</h2>
+  <section id="" class="my-10">
+    <SectionTitle main-title="留言表單" sub-title="" />
+    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
       <form @submit.prevent="submitForm" class="space-y-4 max-w-xl">
         <div>
           <label for="name" class="block font-medium mb-1">姓名 *</label>
@@ -91,13 +84,6 @@ const submitForm = () => {
           送出留言
         </button>
       </form>
-    </section>
-  </div>
-
-  <section id="" class="my-10">
-    <SectionTitle main-title="留言表單" sub-title="" />
-    <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
-
     </div>
   </section>
 
@@ -158,7 +144,10 @@ const submitForm = () => {
   <section id="" class="my-10">
     <SectionTitle main-title="工廠位置" sub-title="" />
     <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
-
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.1888041435728!2d120.50011059757573!3d23.782271280386805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346eb50050641069%3A0x1f5fa789756e36c4!2z5rqQ5ZOB6aaZ6LGG55qu5bel5bug!5e0!3m2!1szh-TW!2stw!4v1748075249215!5m2!1szh-TW!2stw"
+        width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
