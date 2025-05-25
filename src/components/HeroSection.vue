@@ -12,7 +12,7 @@ withDefaults(defineProps<{
     id?: string
     bgImg: string
     imgHeight?: string
-    direction?: 'left' | 'right'
+    direction?: boolean
     mainTitle?: string
     subTitle?: string
     description?: string
@@ -22,7 +22,7 @@ withDefaults(defineProps<{
     id: '',
     bgImg: 'https://fakeimg.pl/1920x1080/',
     imgHeight: '50svh',
-    direction: 'left',
+    direction: true,
     mainTitle: '',
     subTitle: '',
     description: '',
@@ -40,12 +40,12 @@ withDefaults(defineProps<{
             height: imgHeight || '80svh'
         }">
 
-            <Transition :name="direction === 'left' ? 'slide-left' : 'slide-right'" appear>
-                <div class="h-full flex items-center" :class="direction === 'left' ? 'justify-start' : 'justify-end'"
-                    :data-aos="direction === 'left' ? 'fade-right' : 'fade-left'">
+            <Transition :name="direction ? 'slide-left' : 'slide-right'" appear>
+                <div class="h-full flex items-center" :class="direction ? 'justify-start' : 'justify-end'"
+                    :data-aos="direction ? 'fade-right' : 'fade-left'">
                     <div class="lg:w-[50%] w-full h-[50%] lg:p-10 p-5 flex items-center bg-black/75"
-                        :class="direction === 'left' ? 'lg:rounded-r-full' : 'lg:rounded-l-full'">
-                        <div :class="direction === 'left' ? 'lg:mr-20' : 'lg:ml-20'">
+                        :class="direction ? 'lg:rounded-r-full' : 'lg:rounded-l-full'">
+                        <div :class="direction ? 'lg:mr-20' : 'lg:ml-20'">
                             <h2 class="mb-2 text-2xl font-bold text-white text-start">
                                 {{ mainTitle }}
                             </h2>

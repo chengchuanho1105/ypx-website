@@ -12,7 +12,7 @@ const homepageHeroData = [
   {
     bgImg: homepageHeroImg1,
     imgHeight: '60svh',
-    direction: 'left',
+    direction: true,
     mainTitle: '關於我們',
     subTitle: '',
     description: '源品香由一群熱愛土地與豆製品的職人組成。<br>並秉持「傳承、專業、誠信」，淬鍊出豆香的純粹與真誠，讓健康的飲食悄然在每一張豆皮中發芽。',
@@ -22,7 +22,7 @@ const homepageHeroData = [
   {
     bgImg: homepageHeroImg2,
     imgHeight: '60svh',
-    direction: 'right',
+    direction: false,
     mainTitle: '精選產品',
     subTitle: '',
     description: '產品皆由天然食材製成，無無外添加任何化學成分。<br>讓您在享受美味的同時，也能感受健康生活的美好。',
@@ -32,7 +32,7 @@ const homepageHeroData = [
   {
     bgImg: homepageHeroImg3,
     imgHeight: '60svh',
-    direction: 'left',
+    direction: true,
     mainTitle: '媒體介紹',
     subTitle: '',
     description: '媒體報導不只是產品的介紹，更是我們對品質與服務的承諾。<br>源品香相信能讓每一位顧客感受到我們的用心與專業。',
@@ -42,7 +42,7 @@ const homepageHeroData = [
   {
     bgImg: homepageHeroImg4,
     imgHeight: '60svh',
-    direction: 'right',
+    direction: false,
     mainTitle: '客戶見證',
     subTitle: '',
     description: '客戶見證是我們最好的廣告。讓我們一起分享這些美好的故事。邀請更多人認識源品香的堅持與美味。',
@@ -52,7 +52,7 @@ const homepageHeroData = [
   {
     bgImg: 'https://fakeimg.pl/1920x1080/?text=add_more?',
     imgHeight: '60svh',
-    direction: 'left',
+    direction: true,
     mainTitle: '輸入標題',
     subTitle: '',
     description: '此處可依需求增改',
