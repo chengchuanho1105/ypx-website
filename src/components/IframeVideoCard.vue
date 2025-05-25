@@ -2,13 +2,18 @@
 
 import { defineProps } from 'vue';
 
-const props = defineProps({
-    videos: {
-        type: Array,
-        required: true,
-        default: () => []
-    }
-});
+
+interface Video {
+    id?: string | number;
+    title: string;
+    videoUrl: string;
+    description: string;
+}
+
+defineProps<{
+    videos: Video[];
+}>();
+
 </script>
 
 

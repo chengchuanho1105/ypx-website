@@ -29,7 +29,7 @@ const props = defineProps({
     imagePosition: {
         type: String,
         default: 'left', // 預設圖片在左邊
-        validator: (value) => ['left', 'right'].includes(value),
+        validator: (value: string) => ['left', 'right'].includes(value),
     },
 });
 

@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import IframeVideoCard from '@/components/IframeVideoCard.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
 
-const videoData = ref([
+const videosData = ref([
   {
     videoUrl: 'https://www.youtube.com/embed/sJTA1a3BNXg',
     title: '鼎王指定豆皮 外銷歐美年收千萬',
@@ -59,7 +59,7 @@ const articles = [
 
   <section id="" class="my-15">
     <SectionTitle main-title="精選影音" />
-    <IframeVideoCard :videos="videoData" />
+    <IframeVideoCard :videos="videosData" />
 
   </section>
 
