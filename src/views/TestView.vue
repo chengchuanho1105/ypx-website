@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import CarouselBanner from '@/components/CarouselBanner.vue'
-import TransitionSection from '@/components/TransitionSection.vue'
 
 </script>
 
