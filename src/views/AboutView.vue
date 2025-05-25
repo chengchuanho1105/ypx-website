@@ -81,86 +81,88 @@ const contentCardData = ref([
 </script>
 
 <template>
+  <div class="max-w-[1024px] container mx-auto p-3">
 
-  <!-- Section: 創辦人介紹 (Founder Introduction) -->
-  <section id="founderIntro" class="my-15">
+    <!-- Section: 創辦人介紹 (Founder Introduction) -->
+    <section id="founderIntro" class="my-15">
 
-    <SectionTitle mainTitle="創辦人介紹" sub-title="不只創業，更創下了傳統豆皮的新高度" />
+      <SectionTitle mainTitle="創辦人介紹" sub-title="不只創業，更創下了傳統豆皮的新高度" />
 
-    <ContentCard title="源品香創辦人陳先生"
-      content="36歲創業，帶著對台灣傳統豆皮工藝的熱愛與堅持，投入豆製品產業數十載。<br>他深信，唯有遵循古法手工製作，嚴選台灣在地非基因改造大豆，才能煉出真正香醇、令人安心的豆皮。<br>以職人精神，親力親為每一個製作環節，將對土地的情感，融入每一張豆皮之中。"
-      :imageUrl=founderImg />
+      <ContentCard title="源品香創辦人陳先生"
+        content="36歲創業，帶著對台灣傳統豆皮工藝的熱愛與堅持，投入豆製品產業數十載。<br>他深信，唯有遵循古法手工製作，嚴選台灣在地非基因改造大豆，才能煉出真正香醇、令人安心的豆皮。<br>以職人精神，親力親為每一個製作環節，將對土地的情感，融入每一張豆皮之中。"
+        :imageUrl=founderImg />
 
-  </section>
+    </section>
 
-  <!-- Section: 歷史大事記 (Milestones) -->
-  <section id="milestones" class="ny-10">
+    <!-- Section: 歷史大事記 (Milestones) -->
+    <section id="milestones" class="ny-10">
 
-    <SectionTitle mainTitle="歷史大事記" sub-title="回顧源品香一路走來的點滴與故事" />
+      <SectionTitle mainTitle="歷史大事記" sub-title="回顧源品香一路走來的點滴與故事" />
 
-    <div class="bg-white dark:bg-indigo-950 rounded-xl shadow-lg p-6 transition-colors duration-300">
+      <div class="bg-white dark:bg-indigo-950 rounded-xl shadow-lg p-6 transition-colors duration-300">
 
-      <TimrLine v-for="item in timelineData" :key="item.index" :index="item.index" :mainTitle="item.mainTitle"
-        :subTitle="item.subTitle" :description="item.description">
-        <template #icon>
-          <i :class="[item.iconClass, 'w-12', 'h-12', 'text-5xl']"></i>
-        </template>
-      </TimrLine>
+        <TimrLine v-for="item in timelineData" :key="item.index" :index="item.index" :mainTitle="item.mainTitle"
+          :subTitle="item.subTitle" :description="item.description">
+          <template #icon>
+            <i :class="[item.iconClass, 'w-12', 'h-12', 'text-5xl']"></i>
+          </template>
+        </TimrLine>
 
-    </div>
-
-  </section>
-
-  <!-- Section: 製作堅持 (Craftsmanship Values) -->
-  <section id="craftsmanshipValues" class="my-15">
-
-    <SectionTitle mainTitle="職人堅持" sub-title="以時間淬鍊風味，用手工傳遞真誠" />
-    <ImgCardGrid :items="contentCardData" />
-
-  </section>
-
-  <!-- Section: 社會責任 (Social Responsibility) -->
-  <section id="socialResponsibility" class="my-15">
-    <SectionTitle mainTitle="社會責任" sub-title="支持台灣農業、在地耕耘、回饋社會" />
-
-    <div class="grid lg:grid-cols-3 gap-5 text-gray-800">
-      <!-- 在地農業 -->
-      <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
-        <i class="bi bi-flower3 text-green-600 text-4xl mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">來自土地，回饋土地</h3>
-        <p>支持台灣在地農業，採用<span class="text-green-600 font-bold">100%</span>本土黃豆，與土地共生共榮。</p>
       </div>
 
-      <!-- 環保理念 -->
-      <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
-        <i class="bi bi-recycle text-blue-500 text-4xl mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">環境友善製程</h3>
-        <p>積極響應環保政策，減少生產過程中的碳排與污染。</p>
-      </div>
+    </section>
 
-      <!-- 社會回饋 -->
-      <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
-        <i class="bi bi-people-fill text-yellow-600 text-4xl mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">回饋社會</h3>
-        <p>致力於公益與在地社區合作，共創美好未來。</p>
-      </div>
-    </div>
-  </section>
+    <!-- Section: 製作堅持 (Craftsmanship Values) -->
+    <section id="craftsmanshipValues" class="my-15">
 
-  <!-- Section: 加入我們 (Join Our Team) -->
-  <srcsection id="joinOurTeam" class="my-15">
-    <SectionTitle mainTitle="加入源品香" subTitle="成為傳承美味與信念的一份子" />
-    <div class="bg-indigo-50 py-10 rounded-xl shadow">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">加入源品香，一起傳承美味與信念</h2>
-        <p class="text-gray-700 text-lg">
-          我們相信，用心製作每一片豆皮，也是在成就每一份生活。<br>
-          若你熱愛傳統、願意學習、渴望穩定與成長，我們誠摯歡迎你加入。
-        </p>
-      </div>
-    </div>
-  </srcsection>
+      <SectionTitle mainTitle="職人堅持" sub-title="以時間淬鍊風味，用手工傳遞真誠" />
+      <ImgCardGrid :items="contentCardData" />
 
+    </section>
+
+    <!-- Section: 社會責任 (Social Responsibility) -->
+    <section id="socialResponsibility" class="my-15">
+      <SectionTitle mainTitle="社會責任" sub-title="支持台灣農業、在地耕耘、回饋社會" />
+
+      <div class="grid lg:grid-cols-3 gap-5 text-gray-800">
+        <!-- 在地農業 -->
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
+          <i class="bi bi-flower3 text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">來自土地，回饋土地</h3>
+          <p>支持台灣在地農業，採用<span class="text-green-600 font-bold">100%</span>本土黃豆，與土地共生共榮。</p>
+        </div>
+
+        <!-- 環保理念 -->
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
+          <i class="bi bi-recycle text-blue-500 text-4xl mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">環境友善製程</h3>
+          <p>積極響應環保政策，減少生產過程中的碳排與污染。</p>
+        </div>
+
+        <!-- 社會回饋 -->
+        <div class="bg-white p-6 rounded-xl shadow flex flex-col items-center text-center">
+          <i class="bi bi-people-fill text-yellow-600 text-4xl mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">回饋社會</h3>
+          <p>致力於公益與在地社區合作，共創美好未來。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: 加入我們 (Join Our Team) -->
+    <srcsection id="joinOurTeam" class="my-15">
+      <SectionTitle mainTitle="加入源品香" subTitle="成為傳承美味與信念的一份子" />
+      <div class="bg-indigo-50 py-10 rounded-xl shadow">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">加入源品香，一起傳承美味與信念</h2>
+          <p class="text-gray-700 text-lg">
+            我們相信，用心製作每一片豆皮，也是在成就每一份生活。<br>
+            若你熱愛傳統、願意學習、渴望穩定與成長，我們誠摯歡迎你加入。
+          </p>
+        </div>
+      </div>
+    </srcsection>
+
+  </div>
 </template>
 
 <style scoped></style>

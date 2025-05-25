@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Navbar from '../components/DefaultNavbar.vue';
-import UpdatingAlert from '@/components/UpdatingAlert.vue';
+import UpdatingAlert from '../components/UpdatingAlert.vue';
 import Banner from '../components/DefaultBanner.vue';
 import Breadcrumb from '../components/DefaultBreadcrumb.vue';
 import Footer from '../components/DefaultFooter.vue';
@@ -44,13 +44,7 @@ useHead({
 
 <template>
     <div id="defaultLayoutView" class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark-gray-100">
-        <header>
-            <Navbar />
-            <UpdatingAlert />
-            <Banner />
-            <Breadcrumb />
-        </header>
-        <main class="">
+        <main class="mx-auto">
             <slot></slot>
         </main>
         <Footer />

@@ -4,6 +4,7 @@ import type { Component } from 'vue'
 import { defineAsyncComponent } from 'vue'
 
 const DefaultLayout = defineAsyncComponent(() => import('@/layouts/DefaultLayout.vue'))
+const TestLayout = defineAsyncComponent(() => import('@/layouts/TestLayout.vue'))
 
 import HomeView from '../views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
@@ -110,6 +111,17 @@ export const routeMetaList: Array<{
     title: '聯絡我們',
     component: ContactView,
     meta: { layout: DefaultLayout, pageTitle: `聯絡我們｜${CompanyProfile.shortName}` },
+  },
+  {
+    path: '/test',
+    name: 'test',
+    title: '測試頁面',
+    component: () => import('@/views/TestView.vue'),
+    meta: {
+      layout: TestLayout,
+      pageTitle: '測試頁面',
+      hideFromNav: true,
+    },
   },
 ]
 

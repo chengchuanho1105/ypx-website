@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
     mainTitle: {
         type: String,
         required: true,
@@ -27,6 +26,9 @@ const props = defineProps({
         <div class="h-1 bg-gray-300 rounded overflow-hidden mt-1 mb-5">
             <div class="w-50 h-full bg-indigo-500 dark:bg-indigo-600"></div>
         </div>
+    </div>
+    <div class="">
+        <slot></slot>
     </div>
 </template>
 
