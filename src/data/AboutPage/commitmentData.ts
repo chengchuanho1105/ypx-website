@@ -18,7 +18,7 @@ export interface CommitmentItem {
   content: string
 }
 
-const aboutpageCommitmentData: CommitmentItem[] = [
+export const aboutpageCommitmentData: CommitmentItem[] = [
   {
     imageAlt: '嚴選黃豆圖片',
     iconClass: 'bi bi-award-fill',
@@ -47,5 +47,3 @@ const aboutpageCommitmentData: CommitmentItem[] = [
   ...item,
   imageUrl: images[index],
 }))
-
-export default aboutpageCommitmentData

@@ -6,4 +6,5 @@ html {
   scroll-behavior: smooth;
   -webkit-user-select: none;
   user-select: none;
+  scrollbar-width: none;
 }

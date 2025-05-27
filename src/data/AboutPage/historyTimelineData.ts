@@ -6,7 +6,7 @@ export interface HistoryTimelineItem {
   iconClass: string
 }
 
-const aboutpageHistoryTimelineData: HistoryTimelineItem[] = [
+export const aboutpageHistoryTimelineData: HistoryTimelineItem[] = [
   {
     index: 1,
     mainTitle: '創業起點',
@@ -40,5 +40,3 @@ const aboutpageHistoryTimelineData: HistoryTimelineItem[] = [
     iconClass: 'bi bi-stars',
   },
 ]
-
-export default aboutpageHistoryTimelineData

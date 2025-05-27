@@ -2,7 +2,6 @@
 
 import { defineProps } from 'vue';
 
-
 interface Video {
     id?: string | number;
     title: string;
@@ -16,7 +15,6 @@ defineProps<{
 
 </script>
 
-
 <template>
     <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
         <div v-for="(video, index) in videos" :key="video.id || index"
@@ -29,9 +27,11 @@ defineProps<{
             </div>
 
             <div class="px-5 py-3 flex-grow">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-indigo-100 mb-2 line-clamp-1">
-                    {{ video.title }}
-                </h2>
+                <a :href="video.videoUrl" target="_blank" rel="noopener noreferrer">
+                    <h2 class="mb-2 text-2xl font-bold text-gray-900 dark:text-indigo-100 line-clamp-1 hover:underline">
+                        {{ video.title }}
+                    </h2>
+                </a>
                 <div class="px-0 sm:px-5">
                     <p class="h-[5rem] text-lg font-medium text-gray-700 dark:text-indigo-200 line-clamp-3">
                         {{ video.description }}

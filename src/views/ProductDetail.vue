@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { products } from '@/data/products'
+import { products } from '@/data/ProductPage/productData'
 import { computed } from 'vue'
 
 const route = useRoute()

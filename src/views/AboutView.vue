@@ -7,15 +7,15 @@ import ImgCardGrid from '@/components/ImgCardGrid.vue';
 
 
 import founderImg from '@/assets/media/創辦人頭像_1920x1080.jpg' // 創辦人頭像
-import aboutpageHistoryTimelineData from '@/data/aboutpageHistoryTimelineData.ts' // aboutpage History Timeline Data
-import aboutpageCommitmentData from '@/data/aboutpageCommitmentData.ts' // aboutpage Commitment Data
+import { aboutpageHistoryTimelineData } from '@/data/AboutPage/historyTimelineData' // aboutpage History Timeline Data
+import { aboutpageCommitmentData } from '@/data/AboutPage/commitmentData' // aboutpage Commitment Data
 
 </script>
 
 <template>
   <div class="max-w-[1024px] container mx-auto p-3">
 
-    <!-- Section: 創辦人介紹 (Founder) -->
+    <!-- Page: 關於我們 (About)；Section: 創辦人介紹 (Founder) -->
     <SectionDefStyle id="about-founder" mainTitle="創辦人介紹" subTitle="Founder" slogan="不只創業，更創下了傳統豆皮的新高度">
       <div class="p-5">
         <ContentCard title="源品香創辦人陳先生"
@@ -24,7 +24,7 @@ import aboutpageCommitmentData from '@/data/aboutpageCommitmentData.ts' // about
       </div>
     </SectionDefStyle>
 
-    <!-- Section: 歷史大事記 (History) -->
+    <!-- Page: 關於我們 (About)；SSection: 歷史大事記 (History) -->
     <SectionDefStyle id="about-history" mainTitle="歷史大事記" subTitle="History" slogan="回顧源品香一路走來的點滴與故事">
       <div class="p-5">
         <div class="bg-white dark:bg-indigo-950 rounded-xl shadow-lg p-6 transition-colors duration-300">
@@ -40,14 +40,14 @@ import aboutpageCommitmentData from '@/data/aboutpageCommitmentData.ts' // about
       </div>
     </SectionDefStyle>
 
-    <!-- Section: 製作堅持 (Commitment) -->
+    <!-- Page: 關於我們 (About)；SSection: 製作堅持 (Commitment) -->
     <SectionDefStyle id="about-commitment" mainTitle="職人堅持" subTitle="Commitment" slogan="以時間淬鍊風味，用手工傳遞真誠">
       <div class="p-5">
         <ImgCardGrid :items="aboutpageCommitmentData" />
       </div>
     </SectionDefStyle>
 
-    <!-- Section: 社會責任 (CSR) -->
+    <!-- Page: 關於我們 (About)；SSection: 社會責任 (CSR) -->
     <SectionDefStyle id="about-csr" mainTitle="社會責任" subTitle="CSR" slogan="支持台灣農業、在地耕耘、回饋社會">
       <div class="p-5">
         <div class="grid lg:grid-cols-3 gap-5 text-gray-800">
@@ -75,7 +75,7 @@ import aboutpageCommitmentData from '@/data/aboutpageCommitmentData.ts' // about
       </div>
     </SectionDefStyle>
 
-    <!-- Section: 加入我們 (Recruit) -->
+    <!-- Page: 關於我們 (About)；SSection: 加入我們 (Recruit) -->
     <SectionDefStyle id="recruit" mainTitle="加入源品香" subTitle="Recruit" slogan="成為傳承美味與信念的一份子">
       <div class="p-5">
         <div class="bg-indigo-50 py-5">
