@@ -16,9 +16,9 @@ import SectionDefStyle from '@/components/SectionDefStyle.vue';
         <!-- 僅 /product 才顯示這區 -->
         <SectionDefStyle id="" main-title="產品資訊" sub-title="Product Information">
           <div class="p-5 space-y-5 mx-auto ">
-            <router-link to="/product/productIntro"
+            <router-link to="/product/productList"
               class="block p-5 rounded-xl shadow bg-white hover:bg-indigo-50 dark:hover:bg-indigo-900 transition">
-              <h2 class="text-xl font-semibold text-indigo-600">產品介紹</h2>
+              <h2 class="text-xl font-semibold text-indigo-600">產品列表</h2>
               <p class="text-gray-600 dark:text-gray-300">查看我們所有產品的詳細介紹。</p>
             </router-link>
 

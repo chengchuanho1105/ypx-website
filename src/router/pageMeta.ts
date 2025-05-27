@@ -9,7 +9,7 @@ const TestLayout = defineAsyncComponent(() => import('@/layouts/TestLayout.vue')
 import HomeView from '../views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ProductView from '@/views/ProductView.vue' // 重新匯入 ProductView
-import ProductIntroView from '@/views/ProductIntroView.vue'
+import ProductListView from '@/views/ProductListView.vue'
 import ProductCertificationsView from '@/views/ProductCertificationsView.vue'
 import MediaView from '@/views/MediaView.vue'
 import NewsView from '@/views/NewsView.vue'
@@ -22,65 +22,88 @@ type RouteMeta = {
   hideFromNav?: boolean
 }
 
+type RouteMetaItem = {
+  path: string
+  name: string
+  title: string
+  component: Component
+  meta: RouteMeta
+  children?: RouteMetaItem[]
+}
+
 export const routeMetaList: Array<{
   path: string
   name: string
   title: string
-  component: Component // 這裡依然是必要的，因為 /product 會渲染 ProductView
+  component: Component
   meta: RouteMeta
-  children?: Array<{
-    path: string
-    name: string
-    title: string
-    component: Component
-    meta: RouteMeta
-  }>
+  children?: RouteMetaItem[]
 }> = [
   {
     path: '/',
     name: 'home',
     title: '首頁',
     component: HomeView,
-    meta: { layout: DefaultLayout, pageTitle: `首頁｜${CompanyProfile.shortName}` },
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `首頁｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
   },
   {
     path: '/about',
     name: 'about',
     title: '關於我們',
     component: AboutView,
-    meta: { layout: DefaultLayout, pageTitle: `關於我們｜${CompanyProfile.shortName}` },
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `關於我們｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
   },
   {
     path: '/product',
     name: 'product',
     title: '產品資訊',
-    component: ProductView, // 重新指定 ProductView 為父路由的組件
-    meta: { layout: DefaultLayout, pageTitle: `產品資訊｜${CompanyProfile.shortName}` },
+    component: ProductView,
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `產品資訊｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
     children: [
       {
-        path: '', // 將 ProductView 設為 /product 的預設子路由
-        name: 'productOverview', // 給 ProductView 一個名稱，避免和父路由重複
-        title: '產品概覽', // 導覽列可以不顯示，但用於內部管理
-        component: ProductView, // 讓 ProductView 也能作為 /product 的子路由
+        path: 'productList',
+        name: 'productList',
+        title: '產品列表',
+        component: ProductListView,
         meta: {
           layout: DefaultLayout,
-          pageTitle: `產品概覽｜${CompanyProfile.shortName}`,
-          hideFromNav: true,
-        }, // 在導覽列中隱藏此項
+          pageTitle: `產品列表｜${CompanyProfile.shortName}`,
+          hideFromNav: false,
+        },
       },
       {
-        path: 'productIntro',
-        name: 'productIntro',
-        title: '產品介紹',
-        component: ProductIntroView,
-        meta: { layout: DefaultLayout, pageTitle: `產品介紹｜${CompanyProfile.shortName}` },
+        path: 'productList/:id',
+        name: 'productDetail',
+        title: '產品詳情',
+        component: () => import('@/views/ProductDetail.vue'),
+        meta: {
+          layout: DefaultLayout,
+          pageTitle: `產品詳情｜${CompanyProfile.shortName}`,
+          hideFromNav: true,
+        },
       },
       {
         path: 'productCertifications',
         name: 'productCertifications',
         title: '產品認證',
         component: ProductCertificationsView,
-        meta: { layout: DefaultLayout, pageTitle: `產品認證｜${CompanyProfile.shortName}` },
+        meta: {
+          layout: DefaultLayout,
+          pageTitle: `產品認證｜${CompanyProfile.shortName}`,
+          hideFromNav: false,
+        },
       },
     ],
   },
@@ -89,28 +112,44 @@ export const routeMetaList: Array<{
     name: 'media',
     title: '媒體介紹',
     component: MediaView,
-    meta: { layout: DefaultLayout, pageTitle: `媒體介紹｜${CompanyProfile.shortName}` },
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `媒體介紹｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
   },
   {
     path: '/news',
     name: 'news',
     title: '最新消息',
     component: NewsView,
-    meta: { layout: DefaultLayout, pageTitle: `最新消息｜${CompanyProfile.shortName}` },
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `最新消息｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
   },
   {
     path: '/faq',
     name: 'faq',
     title: '常見問題',
     component: FAQView,
-    meta: { layout: DefaultLayout, pageTitle: `常見問題｜${CompanyProfile.shortName}` },
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `常見問題｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
   },
   {
     path: '/contact',
     name: 'contact',
     title: '聯絡我們',
     component: ContactView,
-    meta: { layout: DefaultLayout, pageTitle: `聯絡我們｜${CompanyProfile.shortName}` },
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `聯絡我們｜${CompanyProfile.shortName}`,
+      hideFromNav: false,
+    },
   },
   {
     path: '/test',
