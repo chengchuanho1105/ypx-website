@@ -1,26 +1,18 @@
 <script setup lang="ts">
-import SectionTitle from '@/components/SectionTitle.vue';
+
+import SectionDefStyle from '@/components/SectionDefStyle.vue';
 import FaqItem from '@/components/FaqItem.vue';
 
-const faqs = [
-  {
-    question: '源品香豆皮的黃豆哪裡來的？',
-    answer:
-      '我們採用台灣在地的單一品種非基因改造黃豆，確保風味純正、品質穩定，同時支持本土農業。',
-  },
-  {
-    question: '是否含有添加物或防腐劑？',
-    answer:
-      '源品香堅持手工製作，不添加任何化學成分或防腐劑，讓每一口都安心。',
-  },
-]
+import { faqsData } from '@/data/FaqPage/faqsData.ts'
+
 </script>
 
 <template>
-  <section class="my-15">
-    <SectionTitle main-title="常見問題" sub-title="FAQ" />
-    <FaqItem v-for="(faq, index) in faqs" :key="index" :question="faq.question" :answer="faq.answer" />
-  </section>
+  <div class="max-w-[1024px] container mx-auto p-3">
+    <SectionDefStyle id="faq-fqa" class="my-10" main-title="常見問題 (當前資料僅供參考)" sub-title="FAQ" data-aos="fade-up">
+      <FaqItem v-for="(faq, index) in faqsData" :key="index" :question="faq.question" :answer="faq.answer" />
+    </SectionDefStyle>
+  </div>
 </template>
 
 <style scoped></style>

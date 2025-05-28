@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { onMounted } from 'vue'
 
 import { CompanyProfile } from '@/config/companyProfile.ts'
@@ -48,8 +47,9 @@ onMounted(() => {
 <template>
   <div class="max-w-[1024px] container mx-auto p-3">
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="留言表單(停用中)" sub-title="Contact Us" slogan="期待您寶貴的聲音！">
+    <!-- Page: 聯絡我們 (Contact)；Section: 留言表單 (Contact Form) -->
+    <SectionDefStyle id="contact-form" class="my-10" main-title="留言表單(停用中)" sub-title="Contact Form" slogan="期待您寶貴的聲音！"
+      data-aos="fade-up">
       <div class="p-5">
 
         <form action="" class="p-6 bg-white rounded-xl shadow-md max-w-3xl mx-auto dark:bg-gray-800">
@@ -73,7 +73,7 @@ onMounted(() => {
                 <select id="gender" name="gender" required
                   class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
                   aria-required="true" aria-label="性別">
-                  <option value="" disabled selected hidden>選擇性別</option>
+                  <option value="" disabled selected hidden>選擇性別<span class="text-red-500"> * </span></option>
                   <option value="male">男</option>
                   <option value="female">女</option>
                   <option value="other">其他</option>
@@ -84,7 +84,10 @@ onMounted(() => {
 
           <!-- 回覆方式 -->
           <div class="mb-10">
-            <p class="mb-3 text-gray-700 dark:text-gray-300 font-semibold">回覆方式 <span class="text-red-500">*</span></p>
+            <p class="mb-3 text-gray-700 dark:text-gray-300 font-semibold">回覆方式
+              <span class="text-red-500"> * </span>
+              <span class="text-gray-500 text-sm"> 為避免連絡不到，建議多選</span>
+            </p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4" role="group" aria-labelledby="reply-method-label">
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" id="contactLineID" name="contactMethod" value="lineID" class="accent-blue-600" />
@@ -97,7 +100,7 @@ onMounted(() => {
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" id="contactPhone" name="contactMethod" value="phone" class="accent-blue-600" />
-                電話
+                電話/手機
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" id="contactEmail" name="contactMethod" value="email" class="accent-blue-600" />
@@ -128,7 +131,7 @@ onMounted(() => {
                   class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600" />
                 <label for="phone"
                   class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
-                  聯絡電話
+                  聯絡電話/手機
                 </label>
               </div>
               <div id="emailInput" class="hidden relative z-0">
@@ -196,8 +199,8 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="購買方式" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section: 購買方式 (Purchase Methods) -->
+    <SectionDefStyle id="contact-purchaseMethods" class="my-10" main-title="購買方式" sub-title="" data-aos="fade-up">
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           1. 現場購買<br>
@@ -208,8 +211,8 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="營業時間" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section: 營業時間 (Business Hours) -->
+    <SectionDefStyle id="contact-businessHours" class="my-10" main-title="營業時間" sub-title="" data-aos="fade-up">
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <ul class="list-disc list-inside">
@@ -221,8 +224,8 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="客服專線" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section: 客服專線 (Customer Service Hotline) -->
+    <SectionDefStyle id="contact-customerService" class="my-10" main-title="客服專線" sub-title="" data-aos="fade-up">
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <p>服務時間：週一至週五 09:00 - 18:00</p>
@@ -232,8 +235,8 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="社交平台" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section: 社交平台 (Social Media) -->
+    <SectionDefStyle id="contact-socialMedia" class="my-10" main-title="社交平台" sub-title="" data-aos="fade-up">
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <div class="flex gap-5 px-5">
@@ -258,8 +261,8 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="工廠位置" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section: 工廠位置 (Factory Location) -->
+    <SectionDefStyle id="contact-factoryLocation" class="my-10" main-title="工廠位置" sub-title="" data-aos="fade-up">
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <iframe
@@ -270,8 +273,9 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="招商合作" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section: 招商合作 (Partnership Opportunities) -->
+    <SectionDefStyle id="contact-partnershipPpportunities" class="my-10" main-title="招商合作" sub-title=""
+      data-aos="fade-up">
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <p>我們歡迎有意願的合作夥伴洽談合作機會，請透過上述留言表單或客服專線與我們聯繫。</p>
@@ -279,8 +283,8 @@ onMounted(() => {
       </div>
     </SectionDefStyle>
 
-    <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="" sub-title="">
+    <!-- Page: 聯絡我們 (Contact)；Section:  -->
+    <SectionDefStyle id="contact-others" class="my-10" main-title="" sub-title="" data-aos="fade-up">
       <div class="p-5">
 
       </div>
