@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+onMounted(() => {
+  AOS.init({ duration: 800, once: false })
+})
 
 import SectionDefStyle from '@/components/SectionDefStyle.vue';
 
@@ -14,18 +22,28 @@ import SectionDefStyle from '@/components/SectionDefStyle.vue';
 
       <template v-else>
         <!-- 僅 /product 才顯示這區 -->
-        <SectionDefStyle id="" main-title="產品資訊" sub-title="Product Information">
-          <div class="p-5 space-y-5 mx-auto ">
+        <SectionDefStyle id="" main-title="產品資訊" sub-title="Product Information" data-aos="fade-up">
+          <div class="p-5 grid lg:grid-cols-2 gap-5">
             <router-link to="/product/productList"
-              class="block p-5 rounded-xl shadow bg-white hover:bg-indigo-50 dark:hover:bg-indigo-900 transition">
-              <h2 class="text-xl font-semibold text-indigo-600">產品列表</h2>
-              <p class="text-gray-600 dark:text-gray-300">查看我們所有產品的詳細介紹。</p>
+              class="block p-5 rounded-xl shadow bg-white hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+              data-aos="flip-left">
+              <h2 class="text-xl font-semibold text-indigo-600">
+                產品列表
+              </h2>
+              <p class="text-gray-600 dark:text-gray-300">
+                查看我們所有產品的詳細介紹。
+              </p>
             </router-link>
 
             <router-link to="/product/productCertifications"
-              class="block p-5 rounded-xl shadow bg-white hover:bg-indigo-50 dark:hover:bg-indigo-900 transition">
-              <h2 class="text-xl font-semibold text-indigo-600">產品認證</h2>
-              <p class="text-gray-600 dark:text-gray-300">了解我們通過的各項產品與生產相關認證。</p>
+              class="block p-5 rounded-xl shadow bg-white hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+              data-aos="flip-left">
+              <h2 class="text-xl font-semibold text-indigo-600">
+                產品認證
+              </h2>
+              <p class="text-gray-600 dark:text-gray-300">
+                了解我們通過的各項產品與生產相關認證。
+              </p>
             </router-link>
           </div>
         </SectionDefStyle>

@@ -9,12 +9,14 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
 
             <!-- 公司資訊 -->
             <div>
-                <h3 class="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-2">
-                    {{ CompanyProfile.name }}<br>
-                    <small class="text-sm opacity-80">
-                        {{ CompanyProfile.enName }}
-                    </small>
-                </h3>
+                <a :href="CompanyProfile.websiteUrl">
+                    <h3 class="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-2">
+                        {{ CompanyProfile.name }}<br>
+                        <small class="text-sm opacity-80">
+                            {{ CompanyProfile.enName }}
+                        </small>
+                    </h3>
+                </a>
                 <div class="h-1 bg-gray-100 rounded overflow-hidden mt-1 mb-5">
                     <div class="w-35 h-full bg-indigo-500 dark:bg-indigo-600"></div>
                 </div>

@@ -19,13 +19,14 @@ const filteredProducts = computed(() =>
 
 <template>
 
-  <SectionDefStyle id="product-bestSellingProduct" class="my-10" main-title="熱銷產品" sub-title="Best Selling Product">
+  <SectionDefStyle id="product-bestSellingProduct" class="my-10" main-title="熱銷產品" sub-title="Best Selling Product"
+    data-aos="fade-up">
     <div class="p-5">
       <ProductCarousel />
     </div>
   </SectionDefStyle>
 
-  <SectionDefStyle id="product-productList" class="my-10" main-title="產品列表" sub-title="Product List">
+  <SectionDefStyle id="product-productList" class="my-10" main-title="產品列表" sub-title="Product List" data-aos="fade-up">
     <div class="lg:flex p-5">
       <!-- 左側：分類清單 -->
       <ul class="min-w-[6.75rem] lg:me-5 lg:mb-0 mb-5 space-y-3 flex flex-col">

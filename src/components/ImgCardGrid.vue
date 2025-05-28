@@ -16,21 +16,23 @@ defineProps<{
 </script>
 
 <template>
-    <div class="select-none">
-        <div v-for="(item, index) in items" :key="index" class="relative overflow-hidden shadow">
-            <img class="w-full lg:h-[40svh] h-[60svh] object-cover rounded-xl" :src="item.imageUrl"
-                :alt="item.imageAlt || item.title" draggable="false" />
-            <div
-                class="absolute inset-0 flex flex-col justify-center p-5 bg-black/40 text-white dark:bg-black/40 rounded-xl">
-                <h2 class=" text-2xl font-bold mb-2">
-                    <i :class="[item.iconClass, 'text-indigo-400', 'dark:text-indigo-300', 'text-3xl']"></i>
-                    <span class="ml-2">
-                        {{ item.title }}
-                    </span>
-                </h2>
-                <p class="text-lg font-medium">
-                    {{ item.content }}
-                </p>
+    <div class="grid lg:grid-cols-2">
+        <div v-for="(item, index) in items" :key="index" class="overflow-hidden shadow" data-aos="flip-left">
+            <div class="relative">
+                <img class="w-full lg:h-[40svh] h-[60svh] object-cover rounded-xl" :src="item.imageUrl"
+                    :alt="item.imageAlt || item.title" draggable="false" />
+                <div
+                    class="absolute inset-0 flex flex-col justify-center p-5 bg-black/40 text-white dark:bg-black/40 rounded-xl">
+                    <h2 class=" text-2xl font-bold mb-2">
+                        <i :class="[item.iconClass, 'text-indigo-400', 'dark:text-indigo-300', 'text-3xl']"></i>
+                        <span class="ml-2">
+                            {{ item.title }}
+                        </span>
+                    </h2>
+                    <p class="text-lg font-medium">
+                        {{ item.content }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

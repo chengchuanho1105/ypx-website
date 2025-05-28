@@ -11,7 +11,7 @@ const show = ref(true)
             <div class="flex-1 px-5">
                 <p class="text-lg text-center">
                     源品香官方網站目前正在建置中。<br>
-                    請待稍後再瀏覽，獲得正確資訊。
+                    請待完成後瀏覽，獲得正確資訊。
                 </p>
             </div>
             <button @click="show = false" class="text-lg text-gray-500 hover:text-black dark:hover:text-white">

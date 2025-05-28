@@ -87,7 +87,7 @@ export const routeMetaList: Array<{
         path: 'productList/:id',
         name: 'productDetail',
         title: '產品詳情',
-        component: () => import('@/views/ProductDetail.vue'),
+        component: () => import('@/views/ProductDetailView.vue'),
         meta: {
           layout: DefaultLayout,
           pageTitle: `產品詳情｜${CompanyProfile.shortName}`,
