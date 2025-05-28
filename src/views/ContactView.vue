@@ -1,95 +1,198 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { onMounted } from 'vue'
 
 import { CompanyProfile } from '@/config/companyProfile.ts'
 
 import SectionDefStyle from '@/components/SectionDefStyle.vue'
-import SectionTitle from '@/components/SectionTitle.vue'
 
-const form = ref({
-  name: '',
-  email: '',
-  phone: '',
-  message: '',
-})
+onMounted(() => {
+  const lineIDCheckbox = document.getElementById('contactLineID') as HTMLInputElement | null;
+  const lineNumberCheckbox = document.getElementById('contactLineNumber') as HTMLInputElement | null;
+  const phoneCheckbox = document.getElementById('contactPhone') as HTMLInputElement | null;
+  const emailCheckbox = document.getElementById('contactEmail') as HTMLInputElement | null;
 
-const errors = ref({
-  name: '',
-  email: '',
-  message: '',
-})
+  const lineIDInput = document.getElementById('lineIDInput');
+  const lineNumberInput = document.getElementById('lineNumberInput');
+  const phoneInput = document.getElementById('phoneInput');
+  const emailInput = document.getElementById('emailInput');
 
-const validateEmail = (email: string) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-
-const submitForm = () => {
-  // 重置錯誤訊息
-  errors.value = { name: '', email: '', message: '' }
-
-  let valid = true
-  if (!form.value.name.trim()) {
-    errors.value.name = '請輸入姓名'
-    valid = false
-  }
-  if (!validateEmail(form.value.email)) {
-    errors.value.email = '請輸入有效的 Email'
-    valid = false
-  }
-  if (!form.value.message.trim()) {
-    errors.value.message = '請輸入留言內容'
-    valid = false
+  if (lineIDCheckbox && lineIDInput) {
+    lineIDCheckbox.addEventListener('change', () => {
+      lineIDInput.classList.toggle('hidden', !lineIDCheckbox.checked);
+    });
   }
 
-  if (!valid) return
+  if (lineNumberCheckbox && lineNumberInput) {
+    lineNumberCheckbox.addEventListener('change', () => {
+      lineNumberInput.classList.toggle('hidden', !lineNumberCheckbox.checked);
+    });
+  }
 
-  // 送出表單的邏輯 (例如發 API)
-  alert(`感謝您的留言，${form.value.name}！我們會盡快回覆您。`)
+  if (phoneCheckbox && phoneInput) {
+    phoneCheckbox.addEventListener('change', () => {
+      phoneInput.classList.toggle('hidden', !phoneCheckbox.checked);
+    });
+  }
 
-  // 清空表單
-  form.value = { name: '', email: '', phone: '', message: '' }
-}
+  if (emailCheckbox && emailInput) {
+    emailCheckbox.addEventListener('change', () => {
+      emailInput.classList.toggle('hidden', !emailCheckbox.checked);
+    });
+  }
+});
+
+
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="max-w-[1024px] container mx-auto p-3">
 
     <!-- Page: ；Section:  -->
-    <SectionDefStyle id="" class="my-10" main-title="留言表單" sub-title="">
+    <SectionDefStyle id="" class="my-10" main-title="留言表單(停用中)" sub-title="Contact Us" slogan="期待您寶貴的聲音！">
       <div class="p-5">
-        <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
-          <form @submit.prevent="submitForm" class="space-y-4 max-w-xl">
-            <div>
-              <label for="name" class="block font-medium mb-1">姓名 *</label>
-              <input id="name" v-model="form.name" type="text"
-                class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="您的姓名" />
-              <p v-if="errors.name" class="text-sm text-red-500 mt-1">{{ errors.name }}</p>
+
+        <form action="" class="p-6 bg-white rounded-xl shadow-md max-w-3xl mx-auto dark:bg-gray-800">
+
+          <!-- 姓名 & 性別 -->
+          <div class="mb-10">
+            <p class="mb-3 text-gray-700 dark:text-gray-300 font-semibold">
+              姓名 & 性別
+            </p>
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="flex-1 relative z-0">
+                <input id="name" type="text" name="name" required
+                  class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
+                  placeholder=" " aria-required="true" />
+                <label for="name"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                  姓名（稱呼）<span class="text-red-500">*</span>
+                </label>
+              </div>
+              <div class="flex-1 relative z-0">
+                <select id="gender" name="gender" required
+                  class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
+                  aria-required="true" aria-label="性別">
+                  <option value="" disabled selected hidden>選擇性別</option>
+                  <option value="male">男</option>
+                  <option value="female">女</option>
+                  <option value="other">其他</option>
+                </select>
+              </div>
             </div>
-            <div>
-              <label for="email" class="block font-medium mb-1">電子郵件 *</label>
-              <input id="email" v-model="form.email" type="email"
-                class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="example@mail.com" />
-              <p v-if="errors.email" class="text-sm text-red-500 mt-1">{{ errors.email }}</p>
+          </div>
+
+          <!-- 回覆方式 -->
+          <div class="mb-10">
+            <p class="mb-3 text-gray-700 dark:text-gray-300 font-semibold">回覆方式 <span class="text-red-500">*</span></p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4" role="group" aria-labelledby="reply-method-label">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="contactLineID" name="contactMethod" value="lineID" class="accent-blue-600" />
+                LINE(ID)
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="contactLineNumber" name="contactMethod" value="lineNumber"
+                  class="accent-blue-600" />
+                LINE(手機號碼)
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="contactPhone" name="contactMethod" value="phone" class="accent-blue-600" />
+                電話
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="contactEmail" name="contactMethod" value="email" class="accent-blue-600" />
+                Email
+              </label>
             </div>
-            <div>
-              <label for="phone" class="block font-medium mb-1">電話</label>
-              <input id="phone" v-model="form.phone" type="tel"
-                class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="可填手機或市話" />
+
+            <!-- 動態顯示輸入欄位 -->
+            <div id="contactInputs">
+              <div id="lineIDInput" class="hidden relative z-0 mb-4">
+                <input type="text" name="lineID" id="lineID" placeholder=" "
+                  class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600" />
+                <label for="lineID"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                  LINE(ID)
+                </label>
+              </div>
+              <div id="lineNumberInput" class="hidden relative z-0 mb-4">
+                <input type="tel" name="lineNumber" id="lineNumber" placeholder=" "
+                  class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600" />
+                <label for="lineNumber"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                  LINE(手機號碼)
+                </label>
+              </div>
+              <div id="phoneInput" class="hidden relative z-0 mb-4">
+                <input type="tel" name="phone" id="phone" placeholder=" "
+                  class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600" />
+                <label for="phone"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                  聯絡電話
+                </label>
+              </div>
+              <div id="emailInput" class="hidden relative z-0">
+                <input type="email" name="email" id="email" placeholder=" "
+                  class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600" />
+                <label for="email"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+                  電子信箱
+                </label>
+              </div>
             </div>
-            <div>
-              <label for="message" class="block font-medium mb-1">留言內容 *</label>
-              <textarea id="message" v-model="form.message" rows="5"
-                class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="請輸入您的問題或建議"></textarea>
-              <p v-if="errors.message" class="text-sm text-red-500 mt-1">{{ errors.message }}</p>
+          </div>
+
+          <!-- 希望回覆時段 -->
+          <div class="mb-10" role="group" aria-labelledby="reply-time-label">
+            <p id="reply-time-label" class="mb-3 text-gray-700 dark:text-gray-300 font-semibold">希望回覆時段 <span
+                class="text-red-500">*</span></p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="replyTime" value="am" class="accent-blue-600" required />
+                上午（約 09:00 - 12:00）
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="replyTime" value="pm" class="accent-blue-600" />
+                下午（約 13:00 - 18:00）
+              </label>
             </div>
-            <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700 transition">
-              送出留言
+          </div>
+
+          <!-- 留言主旨 -->
+          <div class="relative z-0 mb-5">
+            <input type="text" name="subject" id="subject" required placeholder=" "
+              class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
+              aria-required="true" />
+            <label for="subject"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+              留言主旨 <span class="text-red-500">*</span>
+            </label>
+          </div>
+
+          <!-- 留言內容 -->
+          <div class="relative z-0 mb-10">
+            <textarea name="message" id="message" rows="5" required placeholder=" "
+              class="peer block w-full py-2 text-lg text-gray-900 border-0 border-b-2 border-gray-300 resize-none appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
+              aria-required="true"></textarea>
+            <label for="message"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-7 scale-75 top-3 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">
+              留言內容 <span class="text-red-500">*</span>
+            </label>
+          </div>
+
+          <!-- 按鈕區 -->
+          <div class="flex">
+            <button type="reset"
+              class="flex-1 py-3 text-base font-medium text-gray-700 border border-gray-400 rounded-l-full hover:bg-gray-100 dark:text-gray-300 dark:border-gray-500 dark:hover:bg-gray-700 transition">
+              清除
             </button>
-          </form>
-        </div>
+            <button type="submit"
+              class="flex-1 py-3 text-base font-medium text-white bg-blue-600 rounded-r-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-300 transition">
+              送出
+            </button>
+          </div>
+        </form>
+
       </div>
     </SectionDefStyle>
 
@@ -161,7 +264,7 @@ const submitForm = () => {
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.1888041435728!2d120.50011059757573!3d23.782271280386805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346eb50050641069%3A0x1f5fa789756e36c4!2z5rqQ5ZOB6aaZ6LGG55qu5bel5bug!5e0!3m2!1szh-TW!2stw!4v1748075249215!5m2!1szh-TW!2stw"
-            width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy"
+            width="100%" height="450" style="border:0;" allowfullscreen="true" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>

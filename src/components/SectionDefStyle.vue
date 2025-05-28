@@ -25,10 +25,10 @@ defineProps({
         <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
           {{ mainTitle }}
         </h2>
-        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-200 ml-5">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-200 ml-5 hidden md:block">
           {{ subTitle }}
         </h3>
-        <span class="ml-auto px-3 text-lg font-bold text-gray-700 dark:text-gray-300 text-end">
+        <span class="ml-auto px-3 text-lg font-bold text-gray-700 dark:text-gray-300 text-end hidden md:block">
           {{ slogan }}
         </span>
       </div>
