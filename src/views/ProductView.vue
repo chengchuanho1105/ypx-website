@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
-onMounted(() => {
-  AOS.init({ duration: 800, once: false })
-})
 
 import SectionDefStyle from '@/components/SectionDefStyle.vue';
 
