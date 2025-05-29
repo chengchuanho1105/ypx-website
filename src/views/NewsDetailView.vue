@@ -44,7 +44,7 @@ function shareArticle() {
 </script>
 
 <template>
-    <div id="" class="container mx-auto p-3">
+    <div id="" class="max-w-[1024px] container mx-auto p-3">
 
         <SectionDefStyle id="" class="" main-title="消息詳情" sub-title="News Detail" data-aos="fade-up">
             <div class="p-5">
