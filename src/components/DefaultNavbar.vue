@@ -44,6 +44,13 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', onScroll)
 })
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+}
 </script>
 
 <template>
@@ -138,7 +145,7 @@ onUnmounted(() => {
     </div>
 
     <div class="fixed bottom-5 right-3 z-50 select-none">
-        <a v-show="isScrolled" href="#banner"
+        <a v-show="isScrolled" @click.prevent="scrollToTop"
             class="bg-indigo-500 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700">
             <span class="text-lg font-bold text-white">Top</span>
         </a>
