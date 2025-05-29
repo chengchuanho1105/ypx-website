@@ -5,10 +5,16 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="C2aXT6B_QZYe_tRpoKGnSBUvjmJQqrQhp4Ua6tBfPio" />
+    <link rel="canonical" :href="computedCanonicalUrl" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <script>
+      const computedCanonicalUrl = computed(() => {
+        return 'https://yourdomain.com' + route.fullPath.split('?')[0]
+      })
+    </script>
     <script type="module" crossorigin src="/assets/index-BFZGZCmJ.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CxW--Iqx.css">
   </head>
