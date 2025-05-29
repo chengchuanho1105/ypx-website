@@ -130,6 +130,17 @@ export const routeMetaList: Array<{
     },
   },
   {
+    path: '/news/:id',
+    name: 'newsDetail',
+    title: '最新消息詳情',
+    component: () => import('@/views/NewsDetailView.vue'),
+    meta: {
+      layout: DefaultLayout,
+      pageTitle: `最新消息詳情｜${CompanyProfile.shortName}`,
+      hideFromNav: true,
+    },
+  },
+  {
     path: '/faq',
     name: 'faq',
     title: '常見問題',

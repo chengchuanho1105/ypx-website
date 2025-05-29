@@ -52,7 +52,7 @@ onMounted(() => {
       data-aos="fade-up">
       <div class="p-5">
 
-        <form action="" class="p-6 bg-white rounded-xl shadow-md max-w-3xl mx-auto dark:bg-gray-800">
+        <form action="" class="p-6 bg-white rounded-xl shadow-md dark:bg-gray-800">
 
           <!-- 姓名 & 性別 -->
           <div class="mb-10">
