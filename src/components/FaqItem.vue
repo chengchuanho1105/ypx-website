@@ -24,7 +24,7 @@ defineProps<{
 </style>
 
 <template>
-    <div class="max-w-[80%] mx-auto my-3 p-5 bg-white dark:bg-indigo-800 rounded-xl shadow">
+    <div class="max-w-[90%] mx-auto mb-3 p-5 bg-white dark:bg-indigo-800 rounded-xl shadow">
         <details class="group">
             <summary
                 class="flex justify-between items-center font-medium cursor-pointer list-none border-b-2 border-indigo-800 dark:border-indigo-200 ">

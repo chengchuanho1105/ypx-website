@@ -38,18 +38,25 @@ onUnmounted(() => {
 
 <template>
   <div class="relative">
+
     <!-- 外層包覆區塊 -->
-    <div ref="wrapperRef" class="overflow-hidden transition-[max-height] duration-700 ease-in-out"
+    <div ref="wrapperRef" class="relative overflow-hidden transition-[max-height] duration-700 ease-in-out"
       :style="{ maxHeight }">
       <slot />
+      <!-- 未展開時顯示的柔邊遮罩 -->
+      <div v-if="!expanded" class="absolute bottom-0 left-0 w-full h-10
+               bg-gradient-to-t from-indigo-50 dark:from-indigo-950
+               pointer-events-none" />
     </div>
 
     <!-- 控制按鈕 -->
     <div class="text-center m-5">
-      <button class="px-4 py-2 text-white bg-indigo-600 rounded hover:bg-indigo-700 transition"
-        @click="expanded = !expanded">
-        {{ expanded ? '收合內容' : '瀏覽全部' }}
+      <button class="inline-flex items-center gap-2 px-5 py-2 text-indigo-700 bg-indigo-100 rounded-md
+               hover:bg-indigo-200 transition" @click="expanded = !expanded">
+        <span>{{ expanded ? '收合內容' : '瀏覽全部' }}</span>
+        <i :class="expanded ? 'bi bi-chevron-double-up' : 'bi bi-chevron-double-down'"></i>
       </button>
     </div>
+
   </div>
 </template>

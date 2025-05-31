@@ -15,14 +15,16 @@ import { iframeArticlesData } from '@/data/MediaPage/IframeArticleData.ts'
 
     <!-- Page: 媒體介紹 (Media)； Section: 精選影音 (Featured Video) -->
     <SectionDefStyle id="media-featuredVideo" class="my-10" main-title="精選影音" sub-title="" data-aos="fade-up">
-      <CardExpander :collapsedHeight="630">
+      <CardExpander :collapsedHeight="750">
         <IframeVideoCard class="p-5" :videos="iframeVideosData" />
       </CardExpander>
     </SectionDefStyle>
 
     <!-- Page: 媒體介紹 (Media)； Section: 精選文章 (Featured Article) -->
     <SectionDefStyle id="media-featuredArticle" class="my-10" main-title="精選文章" sub-title="" data-aos="fade-up">
-      <IframeArticleCard class="p-5" :articles="iframeArticlesData" />
+      <CardExpander :collapsedHeight="440">
+        <IframeArticleCard class="p-5" :articles="iframeArticlesData" />
+      </CardExpander>
     </SectionDefStyle>
 
   </div>
