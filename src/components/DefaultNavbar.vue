@@ -4,6 +4,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { NavigationBarMenuLinks } from '@/router/pageMeta.ts'
 import { CompanyProfile } from '@/config/companyProfile.ts'
 
+import navbarIcon from '@/assets/media/favicon.ico'
+
 const isScrolled = ref(false)
 const NavigationBarMenuOpen = ref(false)
 const lastScrollTop = ref(0)
@@ -63,7 +65,7 @@ function scrollToTop() {
     }">
         <nav class="flex items-center mx-auto justify-between py-2 px-5">
             <div class="flex items-center space-x-2">
-                <img :src="CompanyProfile.favicon" alt="" class="h-[40px] w-[40px]" />
+                <img :src="navbarIcon" alt="" class="h-[40px] w-[40px]" />
                 <a href="/">
                     <span class="text-lg font-bold text-indigo-950 dark:text-indigo-50">
                         {{ CompanyProfile.shortName }}

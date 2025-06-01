@@ -8,6 +8,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 import tailwindcss from '@tailwindcss/vite'
 
+import { CompanyProfile } from './src/config/companyProfile'
+
 export default defineConfig({
   base: '/', // ✅ 使用自訂網域時，base 設為 '/'
   plugins: [
@@ -18,7 +20,7 @@ export default defineConfig({
       // ✅ 自動在 dist 中加入 CNAME 檔案
       name: 'vite:cname',
       closeBundle() {
-        writeFileSync('./dist/CNAME', 'chuan.life')
+        writeFileSync('./dist/CNAME', CompanyProfile.websiteUrl)
       },
     },
     {
