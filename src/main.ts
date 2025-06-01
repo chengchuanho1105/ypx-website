@@ -13,6 +13,21 @@ import router from './router'
 
 import { createHead } from '@vueuse/head'
 
+router.afterEach((to) => {
+  const canonical = document.querySelector("link[rel='canonical']")
+  const base = 'https://yuanpinxiang.com'
+  const href = base + to.fullPath.split('?')[0]
+
+  if (canonical) {
+    canonical.setAttribute('href', href)
+  } else {
+    const link = document.createElement('link')
+    link.setAttribute('rel', 'canonical')
+    link.setAttribute('href', href)
+    document.head.appendChild(link)
+  }
+})
+
 const app = createApp(App)
 
 app.use(createPinia())
