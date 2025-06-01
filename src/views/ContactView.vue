@@ -1,47 +1,16 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
-import { CompanyProfile } from '@/config/companyProfile.ts'
+import { ref } from 'vue'
 
 import SectionDefStyle from '@/components/SectionDefStyle.vue'
 import FormInputPeer from '@/components/FormInputPeer.vue'
 
-onMounted(() => {
-  const lineIDCheckbox = document.getElementById('contactLineID') as HTMLInputElement | null;
-  const lineNumberCheckbox = document.getElementById('contactLineNumber') as HTMLInputElement | null;
-  const phoneCheckbox = document.getElementById('contactPhone') as HTMLInputElement | null;
-  const emailCheckbox = document.getElementById('contactEmail') as HTMLInputElement | null;
+import { CompanyProfile } from '@/config/companyProfile.ts'
 
-  const lineIDInput = document.getElementById('lineIDInput');
-  const lineNumberInput = document.getElementById('lineNumberInput');
-  const phoneInput = document.getElementById('phoneInput');
-  const emailInput = document.getElementById('emailInput');
-
-  if (lineIDCheckbox && lineIDInput) {
-    lineIDCheckbox.addEventListener('change', () => {
-      lineIDInput.classList.toggle('hidden', !lineIDCheckbox.checked);
-    });
-  }
-
-  if (lineNumberCheckbox && lineNumberInput) {
-    lineNumberCheckbox.addEventListener('change', () => {
-      lineNumberInput.classList.toggle('hidden', !lineNumberCheckbox.checked);
-    });
-  }
-
-  if (phoneCheckbox && phoneInput) {
-    phoneCheckbox.addEventListener('change', () => {
-      phoneInput.classList.toggle('hidden', !phoneCheckbox.checked);
-    });
-  }
-
-  if (emailCheckbox && emailInput) {
-    emailCheckbox.addEventListener('change', () => {
-      emailInput.classList.toggle('hidden', !emailCheckbox.checked);
-    });
-  }
-});
-
+// 選擇聯絡方式的 checkbox 狀態
+const contactLineID = ref(false)
+const contactLineNumber = ref(false)
+const contactPhone = ref(false)
+const contactEmail = ref(false)
 
 </script>
 
@@ -52,7 +21,8 @@ onMounted(() => {
     <SectionDefStyle id="contact-form" class="my-10" main-title="留言表單(停用中)" sub-title="Contact Form" slogan="期待您寶貴的聲音！"
       data-aos="fade-up">
       <div class="p-0 sm:p-5">
-        <form action="#" class="p-5 bg-white rounded-xl shadow-lg dark:bg-indigo-900 transition-colors duration-300">
+        <form action="https://formsubmit.co/chengchuanho1105@gmail.com" method="POST"
+          class="p-5 bg-white rounded-xl shadow-lg dark:bg-indigo-900 transition-colors duration-300">
 
           <div class="mb-8">
             <div class="flex flex-col md:flex-row gap-5">
@@ -84,43 +54,40 @@ onMounted(() => {
             </p>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 text-gray-800 dark:text-indigo-200 text-base"
-              role="group" aria-labelledby="reply-method-label">
+              role="group">
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="contactLineID" name="contactMethod" value="lineID"
-                  class="accent-indigo-600 w-5 h-5" />
+                <input type="checkbox" v-model="contactLineID" class="accent-indigo-600 w-5 h-5" />
                 LINE(ID)
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="contactLineNumber" name="contactMethod" value="lineNumber"
-                  class="accent-indigo-600 w-5 h-5" />
+                <input type="checkbox" v-model="contactLineNumber" class="accent-indigo-600 w-5 h-5" />
                 LINE(手機號碼)
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="contactPhone" name="contactMethod" value="phone"
-                  class="accent-indigo-600 w-5 h-5" />
+                <input type="checkbox" v-model="contactPhone" class="accent-indigo-600 w-5 h-5" />
                 電話/手機
               </label>
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="contactEmail" name="contactMethod" value="email"
-                  class="accent-indigo-600 w-5 h-5" />
+                <input type="checkbox" v-model="contactEmail" class="accent-indigo-600 w-5 h-5" />
                 Email
               </label>
             </div>
 
-            <div id="contactInputs" class="space-y-4">
-              <div id="lineIDInput" class="hidden relative">
+            <div id="contactInputs" class="space-y-8">
+              <div v-if="contactLineID" class="relative">
                 <FormInputPeer element="input" type="text" idName="lineID" label="LINE(ID)" required />
               </div>
-              <div id="lineNumberInput" class="hidden relative">
+              <div v-if="contactLineNumber" class="relative">
                 <FormInputPeer element="input" type="tel" idName="lineNumber" label="LINE(手機號碼)" required />
               </div>
-              <div id="phoneInput" class="hidden relative">
+              <div v-if="contactPhone" class="relative">
                 <FormInputPeer element="input" type="tel" idName="phone" label="聯絡電話/手機" required />
               </div>
-              <div id="emailInput" class="hidden relative">
+              <div v-if="contactEmail" class="relative">
                 <FormInputPeer element="input" type="email" idName="email" label="電子信箱" required />
               </div>
             </div>
+
           </div>
 
           <div class="mb-8" role="group" aria-labelledby="reply-time-label">
@@ -128,12 +95,12 @@ onMounted(() => {
               希望回覆時段 <span class="text-red-500">*</span>
             </p>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 text-gray-800 dark:text-indigo-200 text-base">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" name="replyTime" value="am" class="accent-indigo-600 w-5 h-5" required />
+              <label>
+                <input type="checkbox" name="replyAtAm" value="am" />
                 上午（約 09:00 - 12:00）
               </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" name="replyTime" value="pm" class="accent-indigo-600 w-5 h-5" />
+              <label>
+                <input type="checkbox" name="replyAtPm" value="pm" />
                 下午（約 13:00 - 18:00）
               </label>
             </div>
