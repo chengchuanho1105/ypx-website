@@ -14,6 +14,7 @@ useHead({
     meta: [
         { name: 'description', content: DefaultSEO.description },
         { name: 'author', content: DefaultSEO.author },
+        { name: 'authorUrl', content: DefaultSEO.authorUrl },
         { name: 'robots', content: DefaultSEO.robots },
         { name: 'googlebot', content: DefaultSEO.googlebot },
 

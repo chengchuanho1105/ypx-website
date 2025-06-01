@@ -46,7 +46,7 @@ export const routeMetaList: Array<{
     component: HomeView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `首頁｜${CompanyProfile.shortName}`,
+      pageTitle: `首頁｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
   },
@@ -57,7 +57,7 @@ export const routeMetaList: Array<{
     component: AboutView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `關於我們｜${CompanyProfile.shortName}`,
+      pageTitle: `關於我們｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
   },
@@ -68,7 +68,7 @@ export const routeMetaList: Array<{
     component: ProductView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `產品資訊｜${CompanyProfile.shortName}`,
+      pageTitle: `產品資訊｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
     children: [
@@ -79,7 +79,7 @@ export const routeMetaList: Array<{
         component: ProductListView,
         meta: {
           layout: DefaultLayout,
-          pageTitle: `產品列表｜${CompanyProfile.shortName}`,
+          pageTitle: `產品列表｜${CompanyProfile.business.shortName}`,
           hideFromNav: false,
         },
       },
@@ -90,7 +90,7 @@ export const routeMetaList: Array<{
         component: () => import('@/views/ProductDetailView.vue'),
         meta: {
           layout: DefaultLayout,
-          pageTitle: `產品詳情｜${CompanyProfile.shortName}`,
+          pageTitle: `產品詳情｜${CompanyProfile.business.shortName}`,
           hideFromNav: true,
         },
       },
@@ -101,7 +101,7 @@ export const routeMetaList: Array<{
         component: ProductCertificationsView,
         meta: {
           layout: DefaultLayout,
-          pageTitle: `產品認證｜${CompanyProfile.shortName}`,
+          pageTitle: `產品認證｜${CompanyProfile.business.shortName}`,
           hideFromNav: false,
         },
       },
@@ -114,7 +114,7 @@ export const routeMetaList: Array<{
     component: MediaView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `媒體介紹｜${CompanyProfile.shortName}`,
+      pageTitle: `媒體介紹｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
   },
@@ -125,7 +125,7 @@ export const routeMetaList: Array<{
     component: NewsView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `最新消息｜${CompanyProfile.shortName}`,
+      pageTitle: `最新消息｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
   },
@@ -136,7 +136,7 @@ export const routeMetaList: Array<{
     component: () => import('@/views/NewsDetailView.vue'),
     meta: {
       layout: DefaultLayout,
-      pageTitle: `最新消息詳情｜${CompanyProfile.shortName}`,
+      pageTitle: `最新消息詳情｜${CompanyProfile.business.shortName}`,
       hideFromNav: true,
     },
   },
@@ -147,7 +147,7 @@ export const routeMetaList: Array<{
     component: FAQView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `常見問題｜${CompanyProfile.shortName}`,
+      pageTitle: `常見問題｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
   },
@@ -158,7 +158,7 @@ export const routeMetaList: Array<{
     component: ContactView,
     meta: {
       layout: DefaultLayout,
-      pageTitle: `聯絡我們｜${CompanyProfile.shortName}`,
+      pageTitle: `聯絡我們｜${CompanyProfile.business.shortName}`,
       hideFromNav: false,
     },
   },

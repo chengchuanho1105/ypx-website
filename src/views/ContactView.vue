@@ -18,7 +18,7 @@ const contactEmail = ref(false)
   <div class="max-w-[1024px] container mx-auto p-3">
 
     <!-- Page: 聯絡我們 (Contact)；Section: 留言表單 (Contact Form) -->
-    <SectionDefStyle id="contact-form" class="my-10" main-title="留言表單(停用中)" sub-title="Contact Form" slogan="期待您寶貴的聲音！"
+    <SectionDefStyle id="contact-form" class="my-10" main-title="留言表單" sub-title="Contact Form" slogan="期待您寶貴的聲音！"
       data-aos="fade-up">
       <div class="p-0 sm:p-5">
         <form action="https://formsubmit.co/chengchuanho1105@gmail.com" method="POST"
@@ -53,7 +53,7 @@ const contactEmail = ref(false)
               <span class="text-gray-500 text-sm dark:text-indigo-400 font-normal"> 為避免連絡不到，建議多選</span>
             </p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 text-gray-800 dark:text-indigo-200 text-base"
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 text-gray-800 dark:text-indigo-200 text-base"
               role="group">
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" v-model="contactLineID" class="accent-indigo-600 w-5 h-5" />
@@ -186,19 +186,19 @@ const contactEmail = ref(false)
       <div class="p-5">
         <div class="p-5 bg-white dark:bg-indigo-900 rounded-xl shadow">
           <div class="flex gap-5 px-5">
-            <a :href="CompanyProfile.lineOfficialAccount" target="_blank"
+            <a :href="CompanyProfile.socialLinks.line" target="_blank"
               class="text-indigo-800 dark:text-indigo-300 hover:text-indigo-200 dark:hover:text-indigo-100 transition-colors">
               <i class="bi bi-line text-3xl"></i>
             </a>
-            <a :href="CompanyProfile.youtubeChannel" target="_blank"
+            <a :href="CompanyProfile.socialLinks.youtube" target="_blank"
               class="text-indigo-800 dark:text-indigo-300 hover:text-indigo-200 dark:hover:text-indigo-100 transition-colors">
               <i class="bi bi-youtube text-3xl"></i>
             </a>
-            <a :href="CompanyProfile.instagramPage" target="_blank"
+            <a :href="CompanyProfile.socialLinks.instagram" target="_blank"
               class="text-indigo-800 dark:text-indigo-300 hover:text-indigo-200 dark:hover:text-indigo-100 transition-colors">
               <i class="bi bi-instagram text-3xl"></i>
             </a>
-            <a :href="CompanyProfile.facebookFanspage" target="_blank"
+            <a :href="CompanyProfile.socialLinks.facebook" target="_blank"
               class="text-indigo-800 dark:text-indigo-300 hover:text-indigo-200 dark:hover:text-indigo-100 transition-colors">
               <i class="bi bi-facebook text-3xl"></i>
             </a>

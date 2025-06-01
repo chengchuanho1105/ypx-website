@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { writeFileSync, copyFileSync } from 'fs'
+import { writeFileSync } from 'fs'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -20,7 +20,7 @@ export default defineConfig({
       // ✅ 自動在 dist 中加入 CNAME 檔案
       name: 'vite:cname',
       closeBundle() {
-        writeFileSync('./dist/CNAME', CompanyProfile.websiteUrl)
+        writeFileSync('./dist/CNAME', CompanyProfile.website.domain)
       },
     },
     {

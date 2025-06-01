@@ -13,9 +13,11 @@ import router from './router'
 
 import { createHead } from '@vueuse/head'
 
+import { CompanyProfile } from './config/companyProfile'
+
 router.afterEach((to) => {
   const canonical = document.querySelector("link[rel='canonical']")
-  const base = 'https://yuanpinxiang.com'
+  const base = CompanyProfile.website.fullUrl
   const href = base + to.fullPath.split('?')[0]
 
   if (canonical) {
