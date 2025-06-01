@@ -29,7 +29,7 @@ export const CompanyProfile = {
   themeColor: '#4f46e5',
   websiteTitleSlogan: '職人精神打造，道地且香氣四溢',
   websiteDescription: '精選非基改黃豆、職人精神打造、道地且香氣四溢的台灣豆皮產品。歡迎合作洽詢。',
-  websiteUrl: 'https://chuan.life',
+  websiteUrl: 'https://yuanpinxiang.com',
   promotionalImg: '',
   locale: 'zh-tw',
   keyword: ['豆皮', '豆製品', '工廠', '食品', '祥銓生活'],
