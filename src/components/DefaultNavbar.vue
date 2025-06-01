@@ -68,7 +68,7 @@ function scrollToTop() {
                 <img :src="navbarIcon" alt="" class="h-[40px] w-[40px]" />
                 <a href="/">
                     <span class="text-lg font-bold text-indigo-950 dark:text-indigo-50">
-                        {{ CompanyProfile.shortName }}
+                        {{ CompanyProfile.business.shortName }}
                     </span>
                 </a>
             </div>

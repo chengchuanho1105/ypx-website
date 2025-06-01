@@ -9,11 +9,11 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
 
             <!-- 公司資訊 -->
             <div>
-                <a :href="CompanyProfile.websiteUrl">
+                <a :href="CompanyProfile.website.domain">
                     <h3 class="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-2">
-                        {{ CompanyProfile.name }}<br>
+                        {{ CompanyProfile.business.name }}<br>
                         <small class="text-sm opacity-80">
-                            {{ CompanyProfile.enName }}
+                            {{ CompanyProfile.business.enName }}
                         </small>
                     </h3>
                 </a>
@@ -21,10 +21,10 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
                     <div class="w-35 h-full bg-indigo-500 dark:bg-indigo-600"></div>
                 </div>
                 <p class="mt-4 text-sm px-5">
-                    地址：<a :href="CompanyProfile.googleMap">{{ CompanyProfile.address }}</a>
+                    地址：<a :href="CompanyProfile.contact.mapUrl">{{ CompanyProfile.contact.address }}</a>
                 </p>
                 <p class="mb-4 text-sm px-5">
-                    電話：<a :href="'tel:' + CompanyProfile.telepohone_Main">{{ CompanyProfile.telepohone_Main }}</a>
+                    電話：<a :href="'tel:' + CompanyProfile.contact.telephone">{{ CompanyProfile.contact.telephone }}</a>
                 </p>
             </div>
 
@@ -35,19 +35,19 @@ import { CompanyProfile } from '@/config/companyProfile.ts'
                     <div class="w-35 h-full bg-indigo-500 dark:bg-indigo-600"></div>
                 </div>
                 <div class="flex gap-5 px-5">
-                    <a :href="CompanyProfile.lineOfficialAccount" target="_blank"
+                    <a :href="CompanyProfile.socialLinks.line" target="_blank"
                         class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
                         <i class="bi bi-line text-3xl"></i>
                     </a>
-                    <a :href="CompanyProfile.youtubeChannel" target="_blank"
+                    <a :href="CompanyProfile.socialLinks.youtube" target="_blank"
                         class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
                         <i class="bi bi-youtube text-3xl"></i>
                     </a>
-                    <a :href="CompanyProfile.instagramPage" target="_blank"
+                    <a :href="CompanyProfile.socialLinks.instagram" target="_blank"
                         class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
                         <i class="bi bi-instagram text-3xl"></i>
                     </a>
-                    <a :href="CompanyProfile.facebookFanspage" target="_blank"
+                    <a :href="CompanyProfile.socialLinks.facebook" target="_blank"
                         class="hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors">
                         <i class="bi bi-facebook text-3xl"></i>
                     </a>
