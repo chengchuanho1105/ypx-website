@@ -41,6 +41,7 @@ export default defineConfig({
         writeFileSync('./dist/CNAME', CompanyProfile.website.domain)
       },
     },
+    /*
     {
       name: 'vite:404-page',
       closeBundle() {
@@ -68,6 +69,7 @@ export default defineConfig({
         )
       },
     },
+    */
   ],
   resolve: {
     alias: {
