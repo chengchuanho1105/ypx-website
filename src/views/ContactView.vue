@@ -29,7 +29,7 @@ const contactEmail = ref(false)
               <FormInputPeer element="input" type="text" idName="name" label="公司 / 姓名" required />
 
               <div class="flex-1 relative">
-                <select id="gender" name="gender" required class="peer block w-full py-2 text-lg text-gray-900 border-b-2 border-gray-300 appearance-none
+                <select id="gender" name="gender" required class="mt-2 peer block w-full py-2 text-lg text-gray-900 border-b-2 border-gray-300 appearance-none
                        dark:text-indigo-100 dark:border-indigo-700 dark:focus:border-indigo-400 bg-transparent
                        focus:outline-none focus:ring-0 focus:border-indigo-600 transition-colors duration-300"
                   aria-required="true" aria-label="性別">
@@ -95,12 +95,12 @@ const contactEmail = ref(false)
               希望回覆時段 <span class="text-red-500">*</span>
             </p>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 text-gray-800 dark:text-indigo-200 text-base">
-              <label>
-                <input type="checkbox" name="replyAtAm" value="am" />
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="replyAtAm" value="am" class="accent-indigo-600 w-5 h-5" />
                 上午（約 09:00 - 12:00）
               </label>
-              <label>
-                <input type="checkbox" name="replyAtPm" value="pm" />
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" name="replyAtPm" value="pm" class="accent-indigo-600 w-5 h-5" />
                 下午（約 13:00 - 18:00）
               </label>
             </div>
