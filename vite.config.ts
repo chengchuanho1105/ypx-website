@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
-import { writeFileSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -41,35 +42,14 @@ export default defineConfig({
         writeFileSync('./dist/CNAME', CompanyProfile.website.domain)
       },
     },
-    /*
     {
       name: 'vite:404-page',
       closeBundle() {
-        writeFileSync(
-          './dist/404.html',
-          `
-      <!DOCTYPE html>
-      <html lang="zh-TW">
-        <head>
-          <meta charset="UTF-8" />
-          <title>找不到頁面</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <script>
-            setTimeout(() => {
-              window.location.href = '/';
-            }, 3000);
-          </script>
-        </head>
-        <body style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;">
-          <h1>404 - 頁面不存在</h1>
-          <p>3 秒後將導回首頁...</p>
-        </body>
-      </html>
-    `,
-        )
+        const filePath = resolve(__dirname, 'public/404.html') // 你的404.html路徑
+        const content = readFileSync(filePath, 'utf-8')
+        writeFileSync('./dist/404.html', content)
       },
     },
-    */
   ],
   resolve: {
     alias: {
