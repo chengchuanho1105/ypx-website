@@ -24,10 +24,14 @@ const contactEmail = ref(false)
         <form action="https://formsubmit.co/chengchuanho1105@gmail.com" method="POST"
           class="p-5 bg-white rounded-xl shadow-lg dark:bg-indigo-900 transition-colors duration-300">
 
+          <!-- 姓名 & 性別 -->
           <div class="mb-8">
             <div class="flex flex-col md:flex-row gap-5">
+
+              <!-- 姓名 -->
               <FormInputPeer element="input" type="text" idName="name" label="公司 / 姓名" required />
 
+              <!-- 性別 -->
               <div class="flex-1 relative">
                 <select id="gender" name="gender" required class="mt-2 peer block w-full py-2 text-lg text-gray-900 border-b-2 border-gray-300 appearance-none
                        dark:text-indigo-100 dark:border-indigo-700 dark:focus:border-indigo-400 bg-transparent
@@ -46,6 +50,7 @@ const contactEmail = ref(false)
             </div>
           </div>
 
+          <!-- 聯絡方式 -->
           <div class="mb-8">
             <p class="mb-4 text-gray-700 dark:text-indigo-200 font-semibold text-lg">
               聯絡方式
@@ -53,7 +58,8 @@ const contactEmail = ref(false)
               <span class="text-gray-500 text-sm dark:text-indigo-400 font-normal"> 為避免連絡不到，建議多選</span>
             </p>
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 text-gray-800 dark:text-indigo-200 text-base"
+            <!-- 聯絡方式選項 -->
+            <div class="px-5 grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 text-gray-800 dark:text-indigo-200 text-base"
               role="group">
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" v-model="contactLineID" class="accent-indigo-600 w-5 h-5" />
@@ -73,7 +79,8 @@ const contactEmail = ref(false)
               </label>
             </div>
 
-            <div id="contactInputs" class="space-y-8">
+            <!-- 聯絡方式輸入欄位 -->
+            <div id="contactInputs" class="px-5 space-y-8">
               <div v-if="contactLineID" class="relative">
                 <FormInputPeer element="input" type="text" idName="lineID" label="LINE(ID)" required />
               </div>
@@ -90,11 +97,12 @@ const contactEmail = ref(false)
 
           </div>
 
+          <!-- 希望回覆時段 -->
           <div class="mb-8" role="group" aria-labelledby="reply-time-label">
             <p id="reply-time-label" class="mb-4 text-gray-700 dark:text-indigo-200 font-semibold text-lg">
               希望回覆時段 <span class="text-red-500">*</span>
             </p>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 text-gray-800 dark:text-indigo-200 text-base">
+            <div class="px-5 grid grid-cols-1 lg:grid-cols-2 gap-3 text-gray-800 dark:text-indigo-200 text-base">
               <label class="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" name="replyAtAm" value="am" class="accent-indigo-600 w-5 h-5" />
                 上午（約 09:00 - 12:00）
@@ -106,15 +114,19 @@ const contactEmail = ref(false)
             </div>
           </div>
 
+          <!-- 留言主旨 -->
           <div class="relative mb-8">
             <FormInputPeer element="input" type="text" idName="subject" label="留言主旨" required />
           </div>
 
+          <!-- 留言內容 -->
           <div class="relative mb-10">
             <FormInputPeer element="textarea" idName="message" label="留言內容" rows="5" required />
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-4"> <button type="reset" class="flex-1 py-3 text-base font-medium border rounded-full
+          <!-- 清除 & 送出 -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button type="reset" class="flex-1 py-3 text-base font-medium border rounded-full
                    text-gray-700 border-gray-400 hover:bg-gray-100
                    dark:text-indigo-200 dark:border-indigo-600 dark:hover:bg-indigo-800 transition-all duration-300">
               清除
