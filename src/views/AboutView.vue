@@ -18,7 +18,7 @@ import { aboutpageCommitmentData } from '@/data/AboutPage/commitmentData' // abo
     <SectionDefStyle id="about-founder" mainTitle="創辦人介紹" subTitle="Founder" slogan="不只創業，更創下了傳統豆皮的新高度"
       data-aos="fade-up">
       <div class="p-5">
-        <ContentCard title="源品香創辦人陳先生"
+        <ContentCard title="源品香創辦人林先生"
           content="36歲創業，帶著對台灣傳統豆皮工藝的熱愛與堅持，投入豆製品產業數十載。<br>他深信，唯有遵循古法手工製作，嚴選台灣在地非基因改造大豆，才能煉出真正香醇、令人安心的豆皮。<br>以職人精神，親力親為每一個製作環節，將對土地的情感，融入每一張豆皮之中。"
           :imageUrl=founderImg data-aos="flip-left" />
       </div>
